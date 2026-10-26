@@ -1,0 +1,935 @@
+/* finance_challenge/frontend/src/app.css 에서 그대로 옮긴 구간(기준 커밋 aa1ab59, 2026-10-26 확인).
+   토큰·셸·상단바·테마 스위치·홈 밴드·스텝·버튼·카드·탭·페이저·배지·아이콘·데스크톱 프레임 규칙.
+   값은 수정하지 않는다. VeriMod 전용 조정은 verimod.css에서 덮어쓴다. */
+
+:root {
+  /* --- 브랜드 메인 컬러: 연한 파란색 --- */
+  --primary: #4b84ec;
+  --primary-dark: #3568c9;
+  --primary-soft: #e4edfc;
+
+  /* --- 서피스 (라이트) --- */
+  --ivory: #f8fbff;
+  --cream: #eef4fd;
+  --cream-deep: #dfeaff;
+  --card-bg: #ffffff;
+  /* 데스크톱/태블릿 프레임(.app-shell)에서만 쓰는 반투명 버전 — 뒤로 떨어지는 배경 아이콘이
+     은은하게 비치게 하되, 안쪽 카드(.card)는 계속 불투명해서 글자는 또렷하게 유지한다. */
+  --card-bg-translucent: rgba(255, 255, 255, 0.75);
+  --border: #e2eaf7;
+  --heading: #1f2a3d;
+  --text: #33405a;
+  --muted: #8592a8;
+  --shadow-tint: 70, 110, 180;
+
+  /* --- 장식용 아이콘 배지 팔레트 (테마와 무관하게 항상 밝게 유지 — 3D 아이콘 합성용) --- */
+  --tan: #e8c896;
+  --orange: #ee8a4b;
+  --orange-dark: #d97438;
+  --orange-soft: #fbdcc0;
+  --yellow: #fdcb6e;
+  --yellow-soft: #fdedc5;
+  --mint: #8fd3c0;
+  --mint-soft: #dcf1ea;
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --shadow-soft: 0 10px 28px rgba(var(--shadow-tint), 0.14);
+  --shadow-pop: 0 14px 32px rgba(var(--shadow-tint), 0.22);
+  --font-display: "Jua", "Pretendard", sans-serif;
+  --font-body: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+
+  /* 순위 카드 4개 평가축 게이지 색(명도를 맞춰 굵기가 같아 보이게 고른 값) */
+  --gauge-blue: #4b84ec;
+  --gauge-green: #3fb894;
+  --gauge-amber: #eaa53c;
+  --gauge-coral: #ee7d5c;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --primary: #6fa2ff;
+  --primary-dark: #a9c7ff;
+  --primary-soft: rgba(111, 162, 255, 0.16);
+
+  --ivory: #182034;
+  --cream: #121826;
+  --cream-deep: #1c2740;
+  --card-bg: #1b2333;
+  --card-bg-translucent: rgba(27, 35, 51, 0.75);
+  --border: #2b3550;
+  --heading: #f0f4fc;
+  --text: #ccd5e6;
+  --muted: #8b96b0;
+  --shadow-tint: 0, 0, 0;
+
+  /* 어두운 배경에서는 같은 색이 가라앉아 보여서 채도·명도를 올려 잡는다. */
+  --gauge-blue: #6fa2ff;
+  --gauge-green: #4fd3a8;
+  --gauge-amber: #f5bb55;
+  --gauge-coral: #ff9370;
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; min-width: 0; }
+
+html, body { overflow-x: hidden; max-width: 100%; }
+
+/* 스크롤이 생기는 곳(페이지 전체, 카드 내부 등) 어디서나 기본 굵은 회색 스크롤바 대신
+   앱 톤에 맞는 얇고 둥근 스크롤바를 쓴다. */
+/* 스크롤 막대는 스크롤 영역의 '테두리 끝'에 그려진다. 이 앱의 스크롤 상자들은 모서리가
+   둥글어서(.app-frame 32px, .modal-card 28px) 막대가 그 곡선 위에 얹히면 위아래 끝이
+   잘려 튀어나온 것처럼 보였다. 막대 폭 안쪽에 투명 테두리를 둬서 실제로 보이는 두께를
+   4px로 줄이고 가장자리에서 띄운다 — 곡선과 겹치는 면적이 사라진다. */
+* { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--muted); background-clip: padding-box; }
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* 칩이 가로로 넘치는 줄(탭·보험사 칩 등)은 막대를 감춘다 — 손가락·트랙패드로 밀어서
+   보는 줄이라 막대가 늘 떠 있으면 칸 아래에 회색 선 하나가 상시로 남는다. */
+.tabs, .calc-chips { scrollbar-width: none; }
+.tabs::-webkit-scrollbar, .calc-chips::-webkit-scrollbar { display: none; }
+
+/* 앱 전체에서 마우스로 드래그해도 텍스트가 선택되지 않게 한다 — 직접 입력하는
+   input·textarea만 예외로 선택 가능하게 둔다. */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+}
+input, textarea, [contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* 모바일 브라우저는 손가락으로 누른 요소 위에 반투명한 파란 사각형을 잠깐 덧칠한다
+   (-webkit-tap-highlight-color 기본값). 이 앱의 버튼·칩·카드는 모서리가 둥근데
+   그 사각형은 요소의 '박스' 모양 그대로 깔려서, 다크모드 토글이나 칸을 누를 때마다
+   둥근 모양 밖으로 네모난 파란 판이 비쳐 레이아웃이 드러나 보였다. 눌린 느낌은 이미
+   :active 트랜지션으로 주고 있으므로 기본 하이라이트는 통째로 끈다. */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* 안드로이드 크롬은 label을 눌러 체크박스를 토글할 때 글자에 파란 선택 블록을 남기기도
+   한다 — 누를 수 있는 요소는 터치 선택 자체를 막는다(위 body 규칙의 보강). */
+button, a, label, summary, [role="button"], [role="tab"] {
+  -webkit-touch-callout: none;
+}
+
+/* select 드롭다운(닫혀있는 상자)에 실제로 스타일을 입힐 수 있는 부분 — OS 네이티브
+   화살표 대신 앱 톤에 맞는 화살표를 쓴다. 펼쳐졌을 때의 옵션 목록 자체는 브라우저가
+   그리는 부분이라 CSS로 못 바꾸지만, color-scheme(위 :root)이 라이트/다크에 맞춰
+   OS 네이티브 스타일을 골라준다. */
+.step__content select, .form select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238592a8' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+.step__content select { background-size: 13px; }
+.form select { background-size: 11px; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 480px at 15% -10%, var(--cream-deep) 0%, transparent 60%),
+    linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-body);
+  /* 한글은 어절(word) 단위로만 줄바꿈하고(keep-all), 그래도 한 줄에 다 안 들어가는 긴
+     단어·URL 등은 컨테이너를 벗어나지 않게 강제로 끊는다(break-word) — 질문 문구처럼 긴
+     텍스트가 카드 밖으로 삐져나가거나 이상한 자리에서 잘리는 것을 막는다. */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+/* 100vh가 아니라 100dvh를 쓴다 — 모바일 사파리는 100vh를 "주소창이 완전히 사라진"
+   가장 큰 값으로 계산해서, 주소창이 보이는 평소 상태에서는 실제 화면보다 셸이 더 커진다.
+   그러면 .home 내부는 svh(실제 보이는 최소 영역) 기준으로 딱 맞게 줄어들어 있는데도
+   바깥 body가 그 차이만큼 미세하게 스크롤됐다(폰마다 주소창 높이가 달라 증상도 기종마다
+   달랐다). 100dvh는 지금 실제로 보이는 뷰포트를 그대로 따라가므로 이 차이가 없다. */
+.app-shell { display: flex; flex-direction: column; align-items: center; min-height: 100dvh; }
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 18px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page h1 { font-size: 1.3rem; margin-bottom: 4px; color: var(--heading); }
+.page-desc { color: var(--muted); font-size: 0.92rem; margin-top: 0; margin-bottom: 18px; line-height: 1.6; }
+
+/* --- 상단바 (홈으로 가기 + 다크모드 토글) --- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 2px;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, var(--ivory) 70%, transparent);
+  z-index: 30;
+}
+.topbar__home {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--card-bg);
+  box-shadow: 0 3px 10px rgba(var(--shadow-tint), 0.18);
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.topbar__title { font-family: var(--font-display); font-size: 1.02rem; color: var(--heading); }
+.topbar__spacer { flex: 1; }
+
+/* --- 다크모드 토글 (아이콘이 슬라이딩되는 스위치) --- */
+.theme-switch {
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--cream-deep);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 4px rgba(var(--shadow-tint), 0.15);
+}
+.theme-switch__knob {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  box-shadow: 0 2px 6px rgba(var(--shadow-tint), 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.theme-switch__icon {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+/* --- 홈 허브 --- */
+/* --- 홈 화면: 프레임 높이에 맞춘 유동 공간배치 ---
+   홈은 "프레임 안에서 절대 스크롤되지 않는다"를 규칙으로 삼는다. 그래서 높이를 고정 px로
+   쌓지 않고, 프레임의 실제 높이를 기준으로 (1) 각 띠(밴드)가 남는 높이를 비율대로 나눠 갖고
+   (2) 그 안의 아이콘·글자·여백도 같은 높이 기준으로 함께 줄었다 커졌다 하게 만든다.
+   아래 변수 하나만 화면 크기별로 갈아끼우면 배치 전체가 따라 움직인다.
+
+   기본값(모바일·태블릿)은 뷰포트 높이(svh) 기준, 데스크톱 프레임 안에서는 컨테이너 높이(cqh)
+   기준으로 아래 미디어쿼리에서 다시 정의한다 — 프레임은 뷰포트보다 작으므로 기준이 달라야 한다. */
+.home {
+  --home-gap: clamp(5px, 1.1svh, 14px);
+  --home-pad: clamp(6px, 1svh, 14px);
+  --home-icon-hero: clamp(46px, 9svh, 78px);
+  --home-icon-card: clamp(32px, 6svh, 52px);
+  --home-icon-quick: clamp(24px, 4.4svh, 38px);
+  --home-title: clamp(0.92rem, 2.5svh, 1.42rem);
+  --home-subtitle: clamp(0.68rem, 1.5svh, 0.88rem);
+  --home-card-title: clamp(0.9rem, 1.9svh, 1.08rem);
+  --home-card-desc: clamp(0.7rem, 1.45svh, 0.84rem);
+  --home-quick-label: clamp(0.62rem, 1.25svh, 0.74rem);
+
+  /* 각 밴드의 "이보다 더 줄이면 내용이 상자를 넘친다"는 하한선. clamp의 최솟값과 아래
+     min-height가 같은 값을 쓰도록 이름을 붙여 둔다 — 둘이 어긋나면 창을 낮췄을 때
+     칸끼리 겹쳐 보인다(실제로 겪은 증상). 폴더폰 커버 화면(360x480)처럼 아주 낮은
+     프레임에서도 스크롤 없이 들어가도록 2026-08-19에 한 번 더 낮췄다. */
+  --home-h-hero-min: 100px;
+  --home-h-card-min: 54px;
+  --home-h-quick-min: 60px;
+
+  --home-h-hero: clamp(var(--home-h-hero-min), 22svh, 200px);
+  --home-h-card: clamp(var(--home-h-card-min), 11svh, 96px);
+  --home-h-quick: clamp(var(--home-h-quick-min), 13svh, 104px);
+
+  display: flex;
+  flex-direction: column;
+  /* 남는 높이를 나눠 갖는 순서:
+     1) 카드·타일 같은 "칸"은 각자 max-height까지만 커진다 — 더 늘리면 안이 허옇게 비어 보인다.
+     2) 칸 사이 간격(--home-gap)도 프레임 높이에 따라 함께 벌어진다.
+     3) 그러고도 남는 높이는 히어로(아이콘+인사말)가 흡수한다 — 여긴 상자가 아니라 여백이라
+        늘어나도 늘어져 보이지 않고, 내용이 가운데 정렬이라 자연스럽게 숨 쉬는 공간이 된다.
+     space-between으로 균등 분배하면 상단바 바로 아래에 큰 빈칸이 생겨서 쓰지 않는다. */
+  justify-content: flex-start;
+  flex: 1;
+  min-height: 0;
+  padding-top: 4px;
+  gap: var(--home-gap);
+}
+.home__topbar { display: flex; align-items: center; padding: 8px 2px 0; flex: none; }
+.home__topbar-spacer { flex: 1; }
+/* 둘러보기 안내를 다시 여는 단추. 테마 단추 옆에 같은 크기로 붙어 한 벌처럼 보이게 한다. */
+.home__tour-btn {
+  width: 30px;
+  height: 30px;
+  margin-left: 6px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.home__tour-btn:hover { color: var(--primary); border-color: var(--primary); }
+.account-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px 6px 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 3px 10px rgba(var(--shadow-tint), 0.1);
+}
+/* 히어로는 남는 높이를 가장 많이 가져간다(아이콘이 커질수록 화면이 덜 휑해 보인다). */
+.home__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: calc(var(--home-gap) * 0.5);
+  padding: 0 6px;
+  /* 기본 크기는 내용만큼(auto), 칸들이 자리를 잡고 남는 높이는 전부 여기로 온다(위 3번). */
+  flex: 1 1 auto;
+  /* 0으로 두면 창이 낮을 때 인사말·아이콘이 상자 밖으로 밀려나 아래 카드와 겹친다. */
+  min-height: var(--home-h-hero-min);
+}
+.home__hero .icon3d { width: var(--home-icon-hero) !important; height: var(--home-icon-hero) !important; }
+/* .page h1(0,1,1)이 .home__title 단독 클래스(0,1,0)보다 명시도가 높아서, 지금까지
+   이 var(--home-title) 반응형 크기가 항상 .page h1의 고정 1.3rem에 가려져 있었다
+   (화면을 낮춰도 실제로는 안 줄고 있었다) — .home .home__title(0,2,0)로 명시도를
+   올려서 이 규칙이 이기게 한다. */
+.home .home__title {
+  font-family: var(--font-display);
+  font-size: var(--home-title);
+  line-height: 1.32;
+  color: var(--heading);
+  white-space: pre-line;
+  margin: 0;
+}
+.home__subtitle { font-size: var(--home-subtitle); color: var(--muted); max-width: 42ch; margin: 0; line-height: 1.5; }
+
+.home__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--home-gap);
+  /* 칸 높이는 상한값으로 고정한다(늘어나지 않음). 화면이 아주 작을 때만 줄어들 수 있게
+     shrink는 열어둔다. */
+  flex: 0 1 auto;
+  height: calc(var(--home-h-card) * 2 + var(--home-gap));
+  min-height: calc(var(--home-h-card-min) * 2 + var(--home-gap));
+}
+.home-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.6svh, 16px);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--home-pad, 14px) clamp(12px, 2.4svh, 20px);
+  box-shadow: 0 4px 16px rgba(var(--shadow-tint), 0.08);
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+  /* 카드 두 장이 남는 높이를 똑같이 나눠 갖되, 상한(--home-h-card)을 넘겨 늘어나진 않는다. */
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: var(--home-h-card, none);
+}
+/* --home-* 변수는 .home에만 정의돼 있다. 내 보험 화면처럼 .home 밖에서 .home-card를 쓰면
+   var()가 무효가 되면서 선언 전체가 날아간다 — padding이 0이 돼 아이콘이 카드를 넘치고,
+   아이콘은 width:auto가 돼 PNG 원본 크기로 튀어나왔다. 전부 폴백을 둔다. */
+.home-card .icon3d { width: var(--home-icon-card, 40px) !important; height: var(--home-icon-card, 40px) !important; }
+.home-card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(var(--shadow-tint), 0.16); }
+.home-card__text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.home-card__text strong { font-size: var(--home-card-title, 1.02rem); color: var(--heading); }
+.home-card__text span { font-size: var(--home-card-desc, 0.82rem); color: var(--muted); overflow-wrap: anywhere; }
+.home-card__arrow { font-size: clamp(1.1rem, 2.4svh, 1.6rem); color: var(--primary); font-weight: 700; }
+
+/* 보조 메뉴 — 아이콘 + 라벨만, 설명 없이 컴팩트하게 */
+.home__quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--home-gap);
+  flex: 0 1 auto;
+  height: var(--home-h-quick);
+  min-height: var(--home-h-quick-min);
+}
+/* margin-top:auto를 쓰지 않는다 — 남는 높이를 전부 푸터 위 한 군데에 몰아버려서
+   화면 아래쪽이 통째로 비는 원인이었다. 이제는 밴드들이 비율대로 나눠 갖는다. */
+.home__footer { text-align: center; font-size: 0.68rem; color: var(--muted); margin: 0; flex: none; }
+/* 홈 밖의 모든 화면 맨 아래 — 홈의 것과 같은 문구·같은 톤으로 맞춘다. */
+/* 어느 화면이든 저작권 줄은 맨 아래에 있어야 한다. 예전에는 본문 바로 밑에 붙어서,
+   내용이 짧은 화면에서는 화면 한가운데에 문구가 떠 있었다. 본문이 남는 높이를 전부
+   먹고, 저작권 줄은 그 아래 자기 띠를 차지한다 — 그 띠에는 아무것도 겹치지 않는다. */
+/* 본문은 남는 높이를 채우되 절대 눌리지 않는다 — 눌리면 카드가 본문 상자 밖으로
+   비어져 나와서 저작권 줄 위에 겹쳐 그려졌다. */
+.app-main > .page { flex: 1 0 auto; }
+.app-footer {
+  margin-top: auto;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 0.68rem;
+  color: var(--muted);
+  padding: 26px 0 6px;
+  position: relative;
+  z-index: 1;
+}
+.home-quick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3px, 0.7svh, 7px);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--home-pad) 4px;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(var(--shadow-tint), 0.06);
+  min-height: 0;
+}
+.home-quick .icon3d { width: var(--home-icon-quick) !important; height: var(--home-icon-quick) !important; }
+.home-quick__label { font-size: var(--home-quick-label); font-weight: 700; color: var(--text); text-align: center; line-height: 1.25; overflow-wrap: anywhere; }
+
+/* --- 스텝 위저드 (세로 중앙 정렬) --- */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 4px 12px;
+  min-height: min(480px, calc(100svh - 140px));
+}
+.step__icon-wrap { position: relative; margin-bottom: 6px; }
+.step__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.step__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.35;
+  color: var(--heading);
+  white-space: pre-line;
+  margin: 0 0 6px;
+}
+.step__subtitle { font-size: 0.8rem; color: var(--muted); max-width: 360px; margin: 0 0 12px; line-height: 1.5; }
+.step__content { width: 100%; max-width: 420px; text-align: left; margin-bottom: 8px; }
+.step__content .form label { margin-bottom: 10px; }
+
+
+.step__actions { display: flex; gap: 10px; width: 100%; max-width: 420px; margin-top: 12px; align-items: center; }
+.step__back {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--primary-dark);
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(var(--shadow-tint), 0.12);
+  transition: transform 0.12s, box-shadow 0.12s, border-color 0.12s, color 0.12s;
+}
+.step__back:hover { border-color: var(--primary); color: var(--primary); box-shadow: 0 6px 18px rgba(var(--shadow-tint), 0.18); }
+.step__next { flex: 1; }
+
+/* --- PickerField: select 대체용 커스텀 선택 상자(펼치면 모달로 목록을 보여준다) --- */
+.picker-field {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.98rem;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  font-family: inherit;
+  background: var(--ivory);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.picker-field:hover { border-color: var(--primary); }
+.picker-field:disabled { opacity: 0.55; cursor: not-allowed; }
+.picker-field__value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.picker-field__value--placeholder { color: var(--muted); }
+.picker-field__chevron { color: var(--muted); font-size: 1rem; flex: 0 0 auto; transition: transform 0.15s; }
+.form .picker-field, .coverage-table .picker-field { font-size: 0.92rem; padding: 11px 14px; border-radius: var(--radius-sm); }
+
+.picker-list { display: flex; flex-direction: column; gap: 4px; }
+.picker-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.picker-list__item:hover { background: var(--cream); }
+.picker-list__item--active { background: var(--primary-soft); color: var(--primary-dark); font-weight: 700; }
+.picker-list__check { color: var(--primary); font-weight: 800; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(53, 104, 201, 0.28);
+  transition: transform 0.12s;
+}
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-secondary {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 11px 18px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* --- 큼직하고 예쁜 입력 필드 (스텝 안에서 사용) --- */
+.step__content input[type="text"],
+.step__content input[type="date"],
+.step__content input[type="datetime-local"],
+.step__content input[type="number"],
+.step__content input:not([type]),
+.step__content select,
+.step__content textarea,
+.calc-grid input[type="number"],
+.calc-filter-group input[type="number"],
+.email-login input,
+.account-inline-form input {
+  font-size: 0.98rem;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  font-family: inherit;
+  background: var(--ivory);
+  width: 100%;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.step__content input:focus, .step__content select:focus, .step__content textarea:focus,
+.calc-grid input:focus,
+.calc-filter-group input:focus,
+.email-login input:focus,
+.account-inline-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+  background: var(--card-bg);
+}
+/* 네이티브 숫자칸의 위아래 스피너 화살표는 앱 톤과 안 맞아서 없애고, 텍스트 입력처럼 깔끔하게 둔다. */
+.step__content input[type="number"],
+.calc-grid input[type="number"],
+.calc-filter-group input[type="number"] {
+  -moz-appearance: textfield;
+}
+.step__content input[type="number"]::-webkit-outer-spin-button,
+.step__content input[type="number"]::-webkit-inner-spin-button,
+.calc-grid input[type="number"]::-webkit-outer-spin-button,
+.calc-grid input[type="number"]::-webkit-inner-spin-button,
+.calc-filter-group input[type="number"]::-webkit-outer-spin-button,
+.calc-filter-group input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.step__content label,
+.calc-grid label,
+.calc-filter-group label,
+.email-login label,
+.account-inline-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+.step__content .checkbox-label { flex-direction: row; align-items: center; gap: 8px; }
+.step__content .checkbox-label input { width: auto; }
+
+/* --- 일반 카드/폼 (리스트·리뷰 화면용) --- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 14px rgba(var(--shadow-tint), 0.06);
+}
+
+.section-label { font-size: 0.78rem; font-weight: 800; color: var(--muted); letter-spacing: 0.02em; }
+
+.error-box {
+  margin-top: 10px;
+  background: #fdf1ee;
+  color: #c05a3d;
+  border: 1px solid #f3cbbd;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 0.85rem;
+}
+:root[data-theme="dark"] .error-box { background: #3a2420; color: #ff9d80; border-color: #5a352c; }
+
+/* --- 탭 --- */
+.tabs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 16px; }
+.tab {
+  flex: 0 0 auto;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.tab--active { background: var(--primary); border-color: var(--primary); color: white; }
+
+
+/* --- 범용 페이지 네비게이션(길어질 수 있는 목록/표를 스크롤 대신 "다음"으로 나눠 보기) --- */
+.pager-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
+.pager-navbtn {
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+.pager-navbtn:disabled { opacity: 0.35; color: var(--muted); }
+.pager-count { font-size: 0.78rem; color: var(--muted); font-weight: 700; white-space: nowrap; }
+
+.badge { font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; font-weight: 700; }
+.badge--warn { background: var(--yellow-soft); color: #a06a1f; }
+.badge--ok { background: var(--mint-soft); color: #2f7c60; }
+.badge--danger { background: #fbdcd2; color: #b8502f; }
+
+.empty-state { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 36px 20px; }
+.empty-state p { max-width: 320px; }
+.empty-state strong { color: var(--heading); }
+
+/* Fluent Emoji 3D(MIT License, Microsoft) 원본 그대로의 색을 쓴다 — 아이콘 자체가 이미
+   선명한 컬러/광택 셰이딩을 갖고 있어 별도 색 보정 없이 은은한 그림자만 더해 바닥에 놓인 듯한 입체감을 준다. */
+.icon3d {
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 10px rgba(53, 104, 201, 0.28));
+}
+:root[data-theme="dark"] .icon3d {
+  filter: drop-shadow(0 0 14px rgba(111, 162, 255, 0.35)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+@media (min-width: 600px) {
+  .app-main { max-width: 720px; padding: 0 24px 40px; }
+  .home__title { font-size: 1.8rem; }
+  .step__title { font-size: 1.4rem; }
+  .step__icon.icon3d { width: 108px !important; height: 108px !important; }
+}
+
+/* BackgroundDecor는 항상 마운트되어 있지만 데스크톱(900px 이상)에서만 보여준다 — 모바일/
+   태블릿은 화면을 꽉 채우는 구조라 아이콘이 겹쳐 보이면 오히려 알아보기 어려워진다. */
+.bg-decor { display: none; }
+
+@keyframes icon-fall {
+  0%   { transform: translateY(-20vh); opacity: 0; }
+  6%   { opacity: 0.82; }
+  90%  { opacity: 0.82; }
+  100% { transform: translateY(125vh); opacity: 0; }
+}
+
+/* 넓은 데스크톱에서는 모바일 폭 그대로 두되, 화면 한쪽에 붙지 않도록 카드처럼 감싸서
+   "앱 창"처럼 보이게 한다. 사이트 크기(뷰포트 폭)에 따라 자동으로 이 프레임이 붙었다 떨어졌다 한다. */
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    /* 아이콘이 떨어지는 배경에 은은한 그라데이션 — 위쪽에 부드러운 빛 웅덩이 하나 +
+       완만한 3단 세로 그라데이션만 쓴다(너무 화려하지 않게, 밴딩도 안 생기게). */
+    background:
+      radial-gradient(760px 480px at 50% -8%, rgba(255, 255, 255, 0.55) 0%, transparent 60%),
+      linear-gradient(180deg, #d9e6fa 0%, #e8f0fb 45%, #f4f8fd 100%);
+  }
+  :root[data-theme="dark"] body {
+    background:
+      radial-gradient(760px 480px at 50% -8%, rgba(111, 162, 255, 0.12) 0%, transparent 60%),
+      linear-gradient(180deg, #0b1220 0%, #101a2c 45%, #0a0e18 100%);
+  }
+
+  /* 카드 바깥 빈 여백 장식 — 실제 3D 아이콘이 차선(lane) 시스템으로 떨어진다. 데스크톱에서만
+     보여준다(위 .bg-decor 기본값은 숨김). */
+  .bg-decor {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .bg-decor__icon {
+    position: absolute;
+    top: 0;
+    width: 96px;
+    height: 96px;
+    filter: drop-shadow(0 8px 14px rgba(53, 104, 201, 0.22));
+    animation-name: icon-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  :root[data-theme="dark"] .bg-decor__icon {
+    filter: brightness(0.82) saturate(1.05) drop-shadow(0 0 12px rgba(111, 162, 255, 0.3));
+  }
+
+  /* 화면(라우트)이 바뀌어도 카드 크기가 흔들리지 않도록 고정 — 내용이 넘치면 .app-main 내부에서만 스크롤.
+     위아래 여백(body의 40px 패딩)이 뷰포트 높이와 무관하게 항상 똑같이 유지되도록 상한선(796px)
+     없이 계산한다 — 상한선이 있으면 뷰포트가 커질수록 여백만 계속 벌어져 버렸다. */
+  .app-shell {
+    height: calc(100vh - 80px);
+    /* 창을 세로로 아주 낮추면 프레임이 같이 납작해지면서 안쪽 칸들이 서로 겹쳐 보였다.
+       프레임에 하한을 두고, 그보다 낮은 창에서는 프레임을 줄이는 대신 바깥(body)이
+       스크롤되게 한다 — 겹쳐 보이는 것보다 스크롤이 낫다. */
+    min-height: 560px;
+    width: 760px;
+    flex: none;
+    background: var(--card-bg-translucent);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 32px;
+    box-shadow: 0 24px 60px rgba(var(--shadow-tint), 0.22), 0 2px 8px rgba(var(--shadow-tint), 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  /* 네이티브 막대는 감춘다 — 대신 FrameScrollbar가 프레임 높이의 7/8만 쓰는 막대를
+     가운데에 그린다(둥근 모서리와 겹치지 않게). 스크롤 동작 자체는 그대로다. */
+  .app-main {
+    max-width: 100%;
+    height: 100%;
+    padding: 0 20px 40px;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .app-main::-webkit-scrollbar { width: 0; height: 0; }
+
+  .frame-scrollbar {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
+    height: 87.5%;
+    width: 6px;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .frame-scrollbar__thumb {
+    width: 100%;
+    border-radius: 999px;
+    background: var(--border);
+    pointer-events: auto;
+    cursor: grab;
+    transition: background 0.18s ease;
+    will-change: transform;
+  }
+  .frame-scrollbar__thumb:hover { background: var(--muted); }
+  .frame-scrollbar__thumb:active { cursor: grabbing; background: var(--muted); }
+
+  /* 홈은 프레임 안에 정확히 들어맞으므로 스크롤을 아예 없앤다. 아래 패딩도 뺀다 —
+     남는 높이는 밴드들이 나눠 가지므로 바닥에 따로 여백을 둘 이유가 없다.
+
+     그리고 여기를 크기 컨테이너로 선언한다 — 안쪽 내용이 "뷰포트"가 아니라 "이 프레임의
+     실제 높이"를 기준으로 크기·간격을 계산할 수 있게 된다(cqh). 프레임은 위아래 여백
+     80px만큼 뷰포트보다 작으므로 vh로 계산하면 항상 어긋난다.
+
+     컨테이너 선언은 홈에만 건다 — container-type은 containment를 함께 걸어서 안쪽의
+     position:fixed 요소(모달·바텀시트 오버레이)를 이 상자에 가둬버린다. 홈에는 그런
+     오버레이가 없지만 다른 화면에는 있으므로, 셸 전체에 걸면 안 된다. */
+  .app-shell--home .app-main {
+    padding-bottom: 0;
+    /* 원래 hidden이었다. 홈이 프레임에 "정확히 들어맞는다"는 전제였는데, 창을 낮추거나
+       브라우저 글자 크기를 키우면 그 전제가 깨지면서 내용이 잘려 사라졌다. auto면 그런
+       경우에만 막대가 생기고 평소에는 넘치지 않아 그대로 보인다. */
+    overflow-y: auto;
+    container-type: size;
+    container-name: shell;
+  }
+
+  /* 홈의 유동 기준을 뷰포트(svh) → 프레임 높이(cqh)로 갈아끼운다. 값만 바뀌고
+     배치 규칙(밴드 비율, flex)은 위 기본 정의를 그대로 쓴다. */
+  .home {
+    --home-gap: clamp(8px, 1.7cqh, 20px);
+    --home-pad: clamp(10px, 1.9cqh, 22px);
+    --home-icon-hero: clamp(58px, 13cqh, 152px);
+    --home-icon-card: clamp(40px, 8cqh, 72px);
+    --home-icon-quick: clamp(28px, 5.6cqh, 50px);
+    --home-title: clamp(1.2rem, 3.4cqh, 2.35rem);
+    --home-subtitle: clamp(0.8rem, 1.95cqh, 1.14rem);
+    --home-card-title: clamp(1rem, 2.3cqh, 1.32rem);
+    --home-card-desc: clamp(0.78rem, 1.7cqh, 0.96rem);
+    --home-quick-label: clamp(0.68rem, 1.45cqh, 0.86rem);
+    /* 칸 높이 상한도 프레임 높이 기준으로 — 프레임이 커지면 칸도 어느 정도까지는 같이 커진다. */
+    --home-h-hero: clamp(var(--home-h-hero-min), 24cqh, 240px);
+    --home-h-card: clamp(var(--home-h-card-min), 13.5cqh, 138px);
+    --home-h-quick: clamp(var(--home-h-quick-min), 15.5cqh, 156px);
+    padding-top: 0;
+    padding-bottom: clamp(10px, 2cqh, 26px);
+  }
+  /* 이 규칙은 위 기본 정의보다 나중에 나와 같은 우선순위에서 이긴다 — 여기에도 폴백이 없으면
+     .home 밖(내 보험 화면)에서 padding이 통째로 0이 돼 아이콘이 카드를 넘친다. */
+  .home-card { gap: clamp(12px, 2.2cqh, 22px); padding: var(--home-pad, 16px) clamp(16px, 2.8cqh, 26px); }
+  .home-card__arrow { font-size: clamp(1.3rem, 2.8cqh, 1.9rem); }
+  .home-quick { gap: clamp(4px, 0.9cqh, 10px); }
+  .home__subtitle { max-width: 46ch; }
+
+  /* 프레임이 세로로 넉넉해지면(큰 모니터) 아래 4칸을 한 줄 4개 → 두 줄 2개로 접는다.
+     한 줄로 두면 남는 세로가 전부 칸 사이 빈칸으로 가서 화면이 뚝뚝 떨어져 보이는데,
+     두 줄로 접으면 그 높이를 칸이 직접 먹으면서 칸 하나가 프레임 가로의 약 절반이 된다.
+     노트북처럼 세로가 빠듯한 프레임에서는 그대로 한 줄을 유지한다. */
+  @container shell (min-height: 820px) {
+    .home__quick-grid {
+      grid-template-columns: repeat(2, 1fr);
+      height: calc(var(--home-h-quick) * 2 + var(--home-gap));
+      min-height: calc(var(--home-h-quick-min) * 2 + var(--home-gap));
+    }
+    .home-quick { flex-direction: row; justify-content: center; gap: clamp(8px, 1.6cqh, 16px); }
+    .home-quick .icon3d {
+      width: calc(var(--home-icon-quick) * 1.25) !important;
+      height: calc(var(--home-icon-quick) * 1.25) !important;
+    }
+    .home-quick__label { font-size: calc(var(--home-quick-label) * 1.12); }
+  }
+
+  /* 홈 화면 메인 카드("내 여행 준비"/"사고가 발생했어요")는 데스크톱에서도 모바일과 똑같이
+     세로로 한 줄씩 쌓는다 — 2열로 나란히 배치하면 원래 레이아웃과 달라져 보인다.
+     아이콘·글자 크기는 위에서 프레임 높이(cqh) 기준으로 이미 정해지므로 여기서 고정 px로
+     다시 덮지 않는다 — 덮으면 프레임이 커져도 내용물이 그대로라 아래가 휑해진다. */
+
+  .step { padding: 28px 4px 20px; min-height: min(600px, calc(100svh - 200px)); }
+  .step__icon-wrap { margin-bottom: 14px; }
+  .step__icon.icon3d { width: 132px !important; height: 132px !important; }
+  .step__eyebrow { font-size: 0.8rem; padding: 6px 16px; }
+  .step__title { font-size: 1.7rem; line-height: 1.4; margin: 0 0 12px; }
+  .step__subtitle { font-size: 0.94rem; max-width: 420px; margin: 0 0 20px; }
+  .step__content { max-width: 460px; }
+  .step__actions { max-width: 460px; margin-top: 22px; }
+  .step__back { width: 52px; height: 52px; font-size: 1.3rem; }
+  .btn-primary { padding: 15px 22px; font-size: 1rem; }
+  .btn-secondary { padding: 13px 20px; font-size: 0.94rem; }
+  .email-login input,
+  .account-inline-form input,
+  .step__content input[type="text"],
+  .step__content input[type="date"],
+  .step__content input[type="datetime-local"],
+  .step__content input[type="number"],
+  .step__content input:not([type]),
+  .step__content select,
+  .step__content textarea,
+  .picker-field { font-size: 1.05rem; padding: 15px 16px; }
+
+  .hero { padding: 24px 26px; gap: 18px; }
+  .hero__icon.icon3d { width: 108px !important; height: 108px !important; }
+  .hero__title { font-size: 1.4rem; line-height: 1.35; }
+  .hero__subtitle { font-size: 0.88rem; }
+
+  .pwc--loading .pwc__text { font-size: clamp(2rem, 7.2svh, 3.4rem); }
+  .loading-screen__title { font-size: 1.18rem; }
+  .loading-screen__msg { font-size: 0.92rem; }
+
+  .insurer-grid { gap: 12px; }
+  .insurer-card { padding: 10px 6px 12px; gap: 7px; }
+  .insurer-card__name { font-size: 0.74rem; }
+}
+
+@media (max-width: 380px) {
+  .step__title { font-size: 1.05rem; }
+  .step__icon.icon3d { width: 68px !important; height: 68px !important; }
+}
+
+/* 안내 문장 안에 끼워 넣는 작은 조작 링크 — 버튼처럼 보이면 문장 흐름이 끊기고,
+   그렇다고 <a>로 두면 갈 곳이 없다. 글자 그대로 두되 밑줄로만 누를 수 있음을 알린다. */
+.link-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.link-button:hover { color: var(--primary-dark); }
+.link-button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }

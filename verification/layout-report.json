@@ -1,0 +1,2986 @@
+[
+  {
+    "name": "01-home",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "01-home-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 745,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01b-home-link",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "01b-home-link-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 745,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "02-link-demo",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "02-link-demo-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "03-scope",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "03-scope-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "04-words",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "04-words-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "05-pick",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "05-pick-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "06-settings",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "06-settings-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "07-run",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "07-run-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "08-result",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "08-result-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "09-detail",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "09-detail-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "10-share",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "10-share-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "11-link-manual",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "11-link-manual-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "12-run-stopped",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "12-run-stopped-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "13-result-failed",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "13-result-failed-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "14-link-youtube",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "14-link-youtube-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "15-link-news",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "15-link-news-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "16-receipt-info",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "16-receipt-info-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "17-receipt-verified",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "17-receipt-verified-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()",
+      "Failed to load resource: the server responded with a status of 413 ()"
+    ]
+  },
+  {
+    "name": "18-verify",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "18-verify-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "19-vault",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "19-vault-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "20-account",
+    "viewport": "1440x900",
+    "theme": "light",
+    "file": "20-account-1440x900-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01-home",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "01-home-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 630,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01b-home-link",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "01b-home-link-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 630,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "02-link-demo",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "02-link-demo-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "03-scope",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "03-scope-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 717,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "04-words",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "04-words-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 718,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "05-pick",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "05-pick-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 717,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "06-settings",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "06-settings-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 717,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "07-run",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "07-run-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "08-result",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "08-result-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 718,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "09-detail",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "09-detail-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "10-share",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "10-share-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "11-link-manual",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "11-link-manual-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "12-run-stopped",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "12-run-stopped-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 718,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "13-result-failed",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "13-result-failed-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 718,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "14-link-youtube",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "14-link-youtube-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "15-link-news",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "15-link-news-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "16-receipt-info",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "16-receipt-info-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "18-verify",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "18-verify-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "19-vault",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "19-vault-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "20-account",
+    "viewport": "1366x768",
+    "theme": "light",
+    "file": "20-account-1366x768-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01-home",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "01-home-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 749,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01b-home-link",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "01b-home-link-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 749,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "02-link-demo",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "02-link-demo-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "03-scope",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "03-scope-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 823,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "04-words",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "04-words-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 824,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "05-pick",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "05-pick-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 823,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "06-settings",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "06-settings-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 823,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "07-run",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "07-run-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "08-result",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "08-result-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 824,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "09-detail",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "09-detail-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "10-share",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "10-share-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "11-link-manual",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "11-link-manual-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "12-run-stopped",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "12-run-stopped-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 824,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "13-result-failed",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "13-result-failed-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 824,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "14-link-youtube",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "14-link-youtube-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "15-link-news",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "15-link-news-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "16-receipt-info",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "16-receipt-info-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "18-verify",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "18-verify-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "19-vault",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "19-vault-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "20-account",
+    "viewport": "390x844",
+    "theme": "light",
+    "file": "20-account-390x844-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01-home",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "01-home-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 652,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01b-home-link",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "01b-home-link-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 652,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "02-link-demo",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "02-link-demo-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "03-scope",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "03-scope-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 722,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "04-words",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "04-words-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 723,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "05-pick",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "05-pick-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 722,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "06-settings",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "06-settings-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 722,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "07-run",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "07-run-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "08-result",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "08-result-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 723,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "09-detail",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "09-detail-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "10-share",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "10-share-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "11-link-manual",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "11-link-manual-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "12-run-stopped",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "12-run-stopped-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 723,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "13-result-failed",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "13-result-failed-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 723,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "14-link-youtube",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "14-link-youtube-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "15-link-news",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "15-link-news-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "16-receipt-info",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "16-receipt-info-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "18-verify",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "18-verify-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "19-vault",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "19-vault-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "20-account",
+    "viewport": "360x740",
+    "theme": "light",
+    "file": "20-account-360x740-light.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01-home",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "01-home-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 745,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01b-home-link",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "01b-home-link-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 745,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "02-link-demo",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "02-link-demo-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "03-scope",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "03-scope-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "04-words",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "04-words-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "05-pick",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "05-pick-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "06-settings",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "06-settings-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "07-run",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "07-run-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "08-result",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "08-result-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "09-detail",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "09-detail-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "10-share",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "10-share-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "11-link-manual",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "11-link-manual-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "12-run-stopped",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "12-run-stopped-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "13-result-failed",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "13-result-failed-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 841,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "14-link-youtube",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "14-link-youtube-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "15-link-news",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "15-link-news-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "16-receipt-info",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "16-receipt-info-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "18-verify",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "18-verify-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "19-vault",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "19-vault-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "20-account",
+    "viewport": "1440x900",
+    "theme": "dark",
+    "file": "20-account-1440x900-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 842,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01-home",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "01-home-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 630,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01b-home-link",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "01b-home-link-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 630,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "02-link-demo",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "02-link-demo-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "03-scope",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "03-scope-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 717,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "04-words",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "04-words-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 718,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "05-pick",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "05-pick-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 717,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "06-settings",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "06-settings-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 717,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "07-run",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "07-run-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "08-result",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "08-result-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 718,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "09-detail",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "09-detail-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "10-share",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "10-share-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "11-link-manual",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "11-link-manual-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "12-run-stopped",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "12-run-stopped-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 718,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "13-result-failed",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "13-result-failed-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 718,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "14-link-youtube",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "14-link-youtube-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "15-link-news",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "15-link-news-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "16-receipt-info",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "16-receipt-info-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "18-verify",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "18-verify-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "19-vault",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "19-vault-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "20-account",
+    "viewport": "1366x768",
+    "theme": "dark",
+    "file": "20-account-1366x768-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 719,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01-home",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "01-home-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 749,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01b-home-link",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "01b-home-link-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 749,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "02-link-demo",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "02-link-demo-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "03-scope",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "03-scope-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 823,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "04-words",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "04-words-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 824,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "05-pick",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "05-pick-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 823,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "06-settings",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "06-settings-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 823,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "07-run",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "07-run-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "08-result",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "08-result-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 824,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "09-detail",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "09-detail-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "10-share",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "10-share-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "11-link-manual",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "11-link-manual-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "12-run-stopped",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "12-run-stopped-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 824,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "13-result-failed",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "13-result-failed-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 824,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "14-link-youtube",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "14-link-youtube-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "15-link-news",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "15-link-news-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "16-receipt-info",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "16-receipt-info-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "18-verify",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "18-verify-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "19-vault",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "19-vault-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "20-account",
+    "viewport": "390x844",
+    "theme": "dark",
+    "file": "20-account-390x844-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 825,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01-home",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "01-home-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 652,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "01b-home-link",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "01b-home-link-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 652,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "02-link-demo",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "02-link-demo-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "03-scope",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "03-scope-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 722,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "04-words",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "04-words-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 723,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "05-pick",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "05-pick-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 722,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "06-settings",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "06-settings-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 722,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "07-run",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "07-run-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "08-result",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "08-result-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 723,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "09-detail",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "09-detail-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "10-share",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "10-share-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "11-link-manual",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "11-link-manual-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "12-run-stopped",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "12-run-stopped-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 723,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "13-result-failed",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "13-result-failed-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 723,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "14-link-youtube",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "14-link-youtube-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "15-link-news",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "15-link-news-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "16-receipt-info",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "16-receipt-info-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "18-verify",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "18-verify-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "19-vault",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "19-vault-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": null,
+    "primaryVisible": null,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  },
+  {
+    "name": "20-account",
+    "viewport": "360x740",
+    "theme": "dark",
+    "file": "20-account-360x740-dark.png",
+    "mainOverflow": 0,
+    "pageOverflow": 0,
+    "horizontalOverflow": 0,
+    "primaryBottom": 724,
+    "primaryVisible": true,
+    "brokenImages": [],
+    "fonts": [
+      "Jua",
+      "Pretendard"
+    ],
+    "consoleErrors": []
+  }
+]

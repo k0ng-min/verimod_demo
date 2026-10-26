@@ -1,0 +1,58 @@
+{
+  "receipt_body": {
+    "content_commitment": "0x45e27438aae2c9e965ed300903827bef2ec0096a60ab55f9b454b67e3efb12ab",
+    "event_kind": "DECISION",
+    "issuer_id": "verimod-example-platform",
+    "issuer_seq": 2,
+    "payload": {
+      "inference": {
+        "content_commitment": "0x45e27438aae2c9e965ed300903827bef2ec0096a60ab55f9b454b67e3efb12ab",
+        "evidence": [],
+        "inference_id": "7dfefe19-e04c-41c1-ad9c-5eb5f18a30eb",
+        "inferred_at": "2026-10-16T07:22:43.072Z",
+        "input_status": "TRUNCATED",
+        "model_manifest_hash": "0x96b337807aa81ebac6acc3997586cbd351cbfa5c9c44028d479cab327ad0b7c1",
+        "output_version": "inference/1",
+        "score_semantics": "UNCALIBRATED",
+        "scores_ppm": {
+          "hate": 31479,
+          "offensive": 102538
+        },
+        "taxonomy_id": "verimod-ko-beep-hate",
+        "taxonomy_version": "1"
+      },
+      "policy": {
+        "action": "HUMAN_REVIEW",
+        "policy_manifest_hash": "0xa4559132db0d048483c43b258d189027b5de59067ae0b0f4365da2b222299a1e",
+        "reason_codes": [
+          "INPUT_TRUNCATED"
+        ],
+        "triggered_rule_ids": [
+          "W4-TRUNCATED"
+        ]
+      }
+    },
+    "previous_receipt_hash": null,
+    "protocol_version": "verimod/1",
+    "receipt_id": "88eabb11-3354-4bc1-92a8-cb90e0b944d7",
+    "recorded_at": "2026-10-16T07:22:43.077Z",
+    "subject_receipt_hash": null
+  },
+  "receipt_hash": "0x86dba91c25268e16fce29afdced85cf2be32ff7a892b8e39e8f53a03d5f60f7f",
+  "proof": {
+    "merkle_spec": "ct-sha256-receipt-v1",
+    "leaf_index": 0,
+    "tree_size": 2,
+    "siblings": [
+      "0x311a57f7205fa1ee58c0d183e22eba9cefc007897aca9165d46099d9fb0ceb1b"
+    ]
+  },
+  "anchor": {
+    "chain_id": "84532",
+    "contract_address": "0xd17ba590b23e984e3f3408bcdc3529be9868ec50",
+    "epoch_id": "1",
+    "tx_hash": "0x175b3c1ad237a087984b17b47c0343fedfd314a5eb1c34ba7a22511b5cc67286",
+    "block_number": "48358039",
+    "block_hash": "0xacd2061e6e25f7e76e42361c6bb9aa0b15a367b511a18db5b9d083f40a2a43cf"
+  }
+}

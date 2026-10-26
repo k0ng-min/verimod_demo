@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "esnext",
+    "types": [
+      "vite/client"
+    ],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@verimod/protocol/*": [
+        "./upstream/shared/protocol/src/*"
+      ],
+      "@vm-domain/*": [
+        "./upstream/frontend/src/domain/*"
+      ],
+      "@vm-ui/*": [
+        "./upstream/frontend/src/ui/*"
+      ],
+      "@vm-features/*": [
+        "./upstream/frontend/src/features/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "shared"
+  ],
+  "exclude": [
+    "upstream"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "receipt_body": {
+    "content_commitment": "0xa1f03cd2f9c49162bd839ed9af146ae64a102de39d25012c8530533be4c10262",
+    "event_kind": "DECISION",
+    "issuer_id": "verimod-example-platform",
+    "issuer_seq": 1,
+    "payload": {
+      "inference": {
+        "content_commitment": "0xa1f03cd2f9c49162bd839ed9af146ae64a102de39d25012c8530533be4c10262",
+        "evidence": [],
+        "inference_id": "e09844e7-da00-44b8-aa8b-6c823c0a8a3d",
+        "inferred_at": "2026-10-16T07:22:42.834Z",
+        "input_status": "FULL",
+        "model_manifest_hash": "0x96b337807aa81ebac6acc3997586cbd351cbfa5c9c44028d479cab327ad0b7c1",
+        "output_version": "inference/1",
+        "score_semantics": "UNCALIBRATED",
+        "scores_ppm": {
+          "hate": 3364,
+          "offensive": 12979
+        },
+        "taxonomy_id": "verimod-ko-beep-hate",
+        "taxonomy_version": "1"
+      },
+      "policy": {
+        "action": "ALLOW",
+        "policy_manifest_hash": "0xa4559132db0d048483c43b258d189027b5de59067ae0b0f4365da2b222299a1e",
+        "reason_codes": [],
+        "triggered_rule_ids": []
+      }
+    },
+    "previous_receipt_hash": null,
+    "protocol_version": "verimod/1",
+    "receipt_id": "ba4306c1-50f0-41e1-b1f2-c4f66cb0b0f3",
+    "recorded_at": "2026-10-16T07:22:42.849Z",
+    "subject_receipt_hash": null
+  },
+  "receipt_hash": "0x96684f068edaaec7b2ae8abafdaae40c90c118f2d7bede9e4b0dec2278eed3b6",
+  "proof": {
+    "merkle_spec": "ct-sha256-receipt-v1",
+    "leaf_index": 1,
+    "tree_size": 2,
+    "siblings": [
+      "0x588de59cfc4d5c41e5fa705202c760588e5852b32f0251bcfe543c6342dc40f9"
+    ]
+  },
+  "anchor": {
+    "chain_id": "84532",
+    "contract_address": "0xd17ba590b23e984e3f3408bcdc3529be9868ec50",
+    "epoch_id": "1",
+    "tx_hash": "0x175b3c1ad237a087984b17b47c0343fedfd314a5eb1c34ba7a22511b5cc67286",
+    "block_number": "48358039",
+    "block_hash": "0xacd2061e6e25f7e76e42361c6bb9aa0b15a367b511a18db5b9d083f40a2a43cf"
+  }
+}

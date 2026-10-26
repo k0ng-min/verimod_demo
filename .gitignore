@@ -1,0 +1,20 @@
+# 의존성·빌드
+node_modules
+dist
+
+# VeriMod 원본 복제본(scripts/setup-upstream.mjs가 만든다) — 이 저장소에 넣지 않는다
+upstream/
+
+# 개발 DB·로그: 원문·salt·소유 토큰이 들어 있으므로 절대 커밋하지 않는다
+.data/
+
+# 로컬 비밀값
+*.local
+.env.local
+
+# 테스트 산출물
+test-results
+playwright-report
+e2e/shots
+e2e/checks
+e2e/responsive

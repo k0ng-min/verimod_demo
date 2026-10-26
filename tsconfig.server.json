@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "types": [
+      "node",
+      "vite/client"
+    ],
+    "noEmit": true,
+    "paths": {
+      "@verimod/protocol/*": [
+        "./upstream/shared/protocol/src/*"
+      ],
+      "@vm-domain/*": [
+        "./upstream/frontend/src/domain/*"
+      ]
+    }
+  },
+  "include": [
+    "server",
+    "shared",
+    "test"
+  ],
+  "exclude": [
+    "upstream"
+  ]
+}

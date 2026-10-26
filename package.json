@@ -1,0 +1,39 @@
+{
+  "name": "verimod-redesign",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5190 --strictPort",
+    "svc": "tsx server/index.ts",
+    "svc:watch": "tsx watch server/index.ts",
+    "build": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit && vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview --port 5190 --strictPort",
+    "assets": "python -I scripts/build_icons.py",
+    "dev:all": "node scripts/dev-all.mjs",
+    "e2e:walk": "node e2e/walkthrough.mjs e2e/shots",
+    "e2e:checks": "node e2e/checks.mjs e2e/checks",
+    "e2e:responsive": "node e2e/responsive.mjs e2e/responsive"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "framer-motion": "^12.43.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "tsx": "^4.23.13",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vitest": "^5.0.0"
+  }
+}

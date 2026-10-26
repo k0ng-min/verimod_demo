@@ -1,0 +1,142 @@
+{
+  "link": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Link/3D/link_3d.png",
+    "sha256": "5183597c8e1b092dadb3c88607c9b1405c1bea3b82219edc50caa4a8590fd8a8",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "chat-bubble": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Speech%20balloon/3D/speech_balloon_3d.png",
+    "sha256": "b9bdb19ef2e550923bc4f541de049f1633883619564b2aa140a968eaf1d69a0d",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "zoom": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Magnifying%20glass%20tilted%20left/3D/magnifying_glass_tilted_left_3d.png",
+    "sha256": "e8fea91e4652a36486aa9392a67873c987a13389afdae06bbcdae78ab30b4f4f",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "target": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bullseye/3D/bullseye_3d.png",
+    "sha256": "2b2a2d9eec76c5649b8207b050f9135ce666c9d94694e5577aade50c53768437",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "gear": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Gear/3D/gear_3d.png",
+    "sha256": "415296d4fadabc2e0f6593143ea632948fef20a1cd73fbbc3dbda571f0421988",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "shield": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Shield/3D/shield_3d.png",
+    "sha256": "3c1cc1b14f8dd43e8532f9fb751769cd68382a9f25c012b0549e352a8d953a94",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "tick": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Check%20mark%20button/3D/check_mark_button_3d.png",
+    "sha256": "256e3dd950cf1705ab72511ab242472b4bd7db519aa402a6182c1aaf8c58def9",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "receipt": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Receipt/3D/receipt_3d.png",
+    "sha256": "3a0d1b4ab48e5f181211f55d954de2e915db0a9749258c75cae8cff92f1983ba",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "file-text": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Page%20facing%20up/3D/page_facing_up_3d.png",
+    "sha256": "f212d11ed09cfef2ca9cfd3b6b35b29ad7a57eb677aa6611fe284763303a1c57",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "folder": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/File%20folder/3D/file_folder_3d.png",
+    "sha256": "d07ff91df2a4ad9f08e281e9b99ad66924b6db0c0afd2a938feca4dd6b7a9039",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "clipboard": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Clipboard/3D/clipboard_3d.png",
+    "sha256": "cbe87f41d539362944c6a37aeb67387f118740eb1414377619dd8ed368a069a2",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "key": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Key/3D/key_3d.png",
+    "sha256": "ae59ce2b8dcfaa1afcdfe91bde7cc88cf06a8493686a6676706d1c891bb349eb",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "lock": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Locked/3D/locked_3d.png",
+    "sha256": "8c8e9209b8420ac7caf8c94fde6586044d9b91e85728aaaf4b98c2482761ea16",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "lock-key": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Locked%20with%20key/3D/locked_with_key_3d.png",
+    "sha256": "abbbf211bc22973bd6697e18d130b1e050f615d9e346860cb5a5b77b4ad8256a",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "hourglass": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Hourglass%20not%20done/3D/hourglass_not_done_3d.png",
+    "sha256": "ab4183328a0ec7a0440a6fb48113fdb9145f51235e960c7f17097ebb9f13af97",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "chains": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Chains/3D/chains_3d.png",
+    "sha256": "ade8cd15a77f46771cabb0ed2e96398126dc4509de1cde0ebcff477df9b76626",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "warning": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Warning/3D/warning_3d.png",
+    "sha256": "318f534c5d93100443f6e48defc47d76140473d797087af5821587f0feb8003c",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "prohibited": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Prohibited/3D/prohibited_3d.png",
+    "sha256": "20d8e0eba08431ab2df0cf16b20780cf0edbfe54043890b0e4c5d5412af3af2e",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "chart": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bar%20chart/3D/bar_chart_3d.png",
+    "sha256": "0d83833e992b128aa00b85220fc2f777516bbdeb92e9e1e019a7b715ecc6ef97",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "card-box": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Card%20file%20box/3D/card_file_box_3d.png",
+    "sha256": "49caddf1f3b463f0b6e797dd03b6ff555d56dc55c53e76edbd0513c048e89bef",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "notebook": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Notebook/3D/notebook_3d.png",
+    "sha256": "952630c06051a7fab117f9487a7e7fba349f9dd1be5eafd6e0e0c637469ea17a",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "bulb": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Light%20bulb/3D/light_bulb_3d.png",
+    "sha256": "df7b09aa18301507e6fb8c279df66d9afa465b6fed3e63d2efa84dacebdbbf79",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "bell": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bell/3D/bell_3d.png",
+    "sha256": "e1c9efed838326cb746462b824456ef382742237017871f4d0fe54c407a9d5bf",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "star": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Star/3D/star_3d.png",
+    "sha256": "b935cdf502b69054bc2b08e7ba4e4eaba6499564a2041dd77d6291e21bf8cfe8",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "puzzle": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Puzzle%20piece/3D/puzzle_piece_3d.png",
+    "sha256": "c0f47e02e87bd61118985d8ab7b5f40fe302c82e6bb7ae6a7b7add2eefc6de7a",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "sun": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sun/3D/sun_3d.png",
+    "sha256": "c9bb15d03d4b1e6151d97e12119ac93bbd2bcb5e713a49c1fcfc11ece54caec1",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "moon": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Crescent%20moon/3D/crescent_moon_3d.png",
+    "sha256": "0a5b5192390983789d430e37582dfda343be19bf8246feda73108484771ba09d",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  },
+  "party": {
+    "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Party%20popper/3D/party_popper_3d.png",
+    "sha256": "70a8e2f9daf1646be9e773751b7f3b6b281a2415cf29c3c3aeebd9c923cdc3e0",
+    "license": "MIT (Microsoft fluentui-emoji)"
+  }
+}
