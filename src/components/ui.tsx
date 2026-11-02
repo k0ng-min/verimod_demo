@@ -6,15 +6,21 @@ import type { Action, ItemStatus } from '../../shared/types'
 import { Icon3D } from './Icon3D'
 import { ThemeToggle } from './ThemeToggle'
 
+/** 문자 화살표 대신 모든 조작에 쓰는 둥근 획의 아이콘. */
+export function ArrowIcon({ direction = 'right', size = 22 }: { direction?: 'left' | 'right'; size?: number }) {
+  return <svg className={`arrow-icon arrow-icon--${direction}`} width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+}
+
 /** 레퍼런스 TopBar(원형 홈 버튼 + 제목 + 테마 스위치)에 단계 표시를 더했다. 계정·로그인은 없다. */
-export function TopBar({ title, step, onHome }: { title: string; step?: string; onHome?: () => void }) {
+export function TopBar({ title, step, onHome, onHelp }: { title: string; step?: string; onHome?: () => void; onHelp?: () => void }) {
   const navigate = useNavigate()
   return (
     <div className="topbar">
-      <button type="button" className="topbar__home" onClick={onHome ?? (() => navigate('/'))} aria-label="홈으로">←</button>
+      <button type="button" className="topbar__home" onClick={onHome ?? (() => navigate('/'))} aria-label="이전 화면"><ArrowIcon direction="left" /></button>
       <span className="topbar__title">{title}</span>
       {step && <span className="topbar__step" aria-label={`단계 ${step}`}>{step}</span>}
       <span className="topbar__spacer" />
+      {onHelp && <button type="button" className="topbar__help" onClick={onHelp} aria-label="PENDING_ANCHOR 이후 흐름 도움말">?</button>}
       <ThemeToggle />
     </div>
   )

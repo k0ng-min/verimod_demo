@@ -87,7 +87,7 @@ export function WordsStep(props: StepProps) {
   return (
     <StepFlow stepKey="words" icon="gear" eyebrow="단어 조건" title="어떤 댓글을 고를까요?"
       subtitle={`가져온 댓글 ${total}개 안에서만 골라요. 판정 기준은 바뀌지 않아요.`} dense
-      onBack={flow.kind === 'MANUAL' ? () => go('link') : () => go('scope')} onNext={() => go('pick')}
+      onNext={() => go('pick')}
       nextDisabled={matched.length === 0 || !semanticReady || Boolean(locked)} nextLabel={matched.length ? `일치한 ${matched.length}개 고르기` : '일치하는 댓글이 없어요'}>
       {locked && <Notice tone="warn" icon="lock">이 세션은 이미 판정을 시작해 조건을 바꿀 수 없어요. <button type="button" className="link-button" onClick={restart}>새로 시작</button></Notice>}
       <div className="vchips vchips--row" role="group" aria-label="단어 선택 방식">
@@ -171,7 +171,7 @@ export function PickStep(props: StepProps) {
   return (
     <StepFlow stepKey="pick" icon="tick" eyebrow="댓글 선택" title="판정할 댓글을 골라요" dense
       subtitle={`조건에 맞은 ${matched.length}개 중 빼고 싶은 댓글의 체크를 풀어요.`}
-      onBack={() => go('words')} onNext={confirm} loading={busy} nextDisabled={selected.length === 0} nextLabel={`${selected.length}개로 계속`}>
+      onNext={confirm} loading={busy} nextDisabled={selected.length === 0} nextLabel={`${selected.length}개로 계속`}>
       <div className="vtoolbar">
         <span className="vtoolbar__count"><b>{selected.length}</b> 선택 / {matched.length} 일치</span>
         <button type="button" className="pager-navbtn" onClick={() => update({ excluded: [] })} disabled={excluded.size === 0}>전체 선택</button>
@@ -224,7 +224,7 @@ export function SettingsStep({ flow, update, go, session, setSession }: StepProp
   return (
     <StepFlow stepKey="settings" icon="lock-key" eyebrow="판정 전 확인" title={`${count}개를 판정할게요`} dense
       subtitle="한 번에 한 개씩 순서대로 판정하고, 성공한 댓글마다 영수증이 하나씩 생겨요."
-      onBack={() => go('pick')} onNext={start} loading={busy} loadingLabel="시작하는 중..." nextLabel={session?.is_demo ? `데모 판정 ${count}개 시작` : `${count}개 판정 시작`}>
+      onNext={start} loading={busy} loadingLabel="시작하는 중..." nextLabel={session?.is_demo ? `데모 판정 ${count}개 시작` : `${count}개 판정 시작`}>
       <div className="card vcard-tight">
         <span className="section-label">판정 기준 · 바꿀 수 없음</span>
         {session?.is_demo

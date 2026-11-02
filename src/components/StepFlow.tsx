@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Icon3D } from './Icon3D'
 import { FloatingIcon } from './FloatingIcon'
 import { KineticEyebrow, KineticText } from './Kinetic'
+import { ArrowIcon } from './ui'
 
 interface StepFlowProps {
   icon: string
@@ -64,7 +65,7 @@ export function StepFlow({
         <div className="step__actions vstep__actions">
           {onBack && (
             <motion.button whileTap={{ scale: 0.9 }} whileHover={{ y: -2 }} type="button" className="step__back" onClick={onBack} aria-label="이전" title="이전">
-              <span aria-hidden>←</span>
+              <ArrowIcon direction="left" />
             </motion.button>
           )}
           {secondary}

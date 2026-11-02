@@ -194,7 +194,7 @@ describe('issued receipt is a real backend bundle', () => {
     expect(JSON.stringify(bundle)).not.toContain('영수증 확인용')
   })
 
-  it('Private Package (verimod-private/1) passes the original content side-check; one changed character fails', async () => {
+  it('Private Package content side-check remains NOT_CHECKED until an anchor is core VALID', async () => {
     const { call, runner, backendUrl } = await boot({ aiAvailable: true })
     const created = await call('POST', '/svc/sessions', { kind: 'MANUAL', text: '패키지 확인 문장' })
     const { owner_token: owner, session } = created.body.data
@@ -215,9 +215,11 @@ describe('issued receipt is a real backend bundle', () => {
     })
     const ok = await verifyReceipt(bundle, ctx(pkg))
     expect(ok.code).toBe('PENDING_ANCHOR')
-    expect(ok.content.state).toBe('PASSED')
+    // 최신 main 검증기는 미앵커 Receipt의 원문 검증을 "통과"로 보이지 않는다.
+    // proof·anchor·finality가 VALID가 된 뒤에만 Private Package side-check를 수행한다.
+    expect(ok.content.state).toBe('NOT_CHECKED')
     const bad = await verifyReceipt(bundle, ctx({ ...pkg, original_text: pkg.original_text.replace('패', '팩') }))
-    expect(bad.content.state).toBe('FAILED')
+    expect(bad.content.state).toBe('NOT_CHECKED')
     expect(() => pickPackage(packages, '00000000-0000-4000-8000-000000000000')).toThrow()
     expect(() => pickPackage([{ ...packages[0], extra: 1 }], item.receipt_id)).toThrow(/형식/)
   })

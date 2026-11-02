@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import type { MaxComments, SessionView, SortOrder } from '../../shared/types'
 import { parseContentUrl } from '../../shared/url'
 import { svc, SvcError } from '../api/svc'
@@ -107,11 +106,10 @@ export function LinkStep({ flow, update, go, caps, capsError, setSession }: Step
 }
 
 export function SourceStep({ flow, go }: StepProps) {
-  const navigate = useNavigate()
   const source = flow.source
   return (
     <StepFlow stepKey="source" icon="zoom" eyebrow="콘텐츠 확인" title="이 영상이 맞나요?"
-      subtitle="YouTube에서 실제로 조회한 정보예요." onBack={() => navigate('/')} onNext={() => go('scope')} nextLabel="수집 범위 정하기">
+      subtitle="YouTube에서 실제로 조회한 정보예요." onNext={() => go('scope')} nextLabel="수집 범위 정하기">
       {source ? (
         <div className="card vsource">
           <span className="vbadge vbadge--platform">YouTube</span>
@@ -128,7 +126,7 @@ export function SourceStep({ flow, go }: StepProps) {
   )
 }
 
-export function ScopeStep({ flow, update, go, caps, setSession }: StepProps) {
+export function ScopeStep({ flow, update, caps, setSession }: StepProps) {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const provider = caps?.providers[flow.kind === 'DEMO' ? 'DEMO' : 'YOUTUBE']
@@ -156,7 +154,7 @@ export function ScopeStep({ flow, update, go, caps, setSession }: StepProps) {
   return (
     <StepFlow stepKey="scope" icon="target" eyebrow="수집 범위" title="댓글을 얼마나 가져올까요?"
       subtitle={total !== null ? `플랫폼 전체 ${total.toLocaleString('ko-KR')}개 중 최대 ${flow.options.max}개만 가져와요. 전부 모으는 것이 아니에요.` : `최대 ${flow.options.max}개까지만 가져와요.`}
-      onBack={() => go(flow.kind === 'DEMO' ? 'link' : 'source')} onNext={collect} loading={busy} loadingLabel="댓글을 가져오는 중..." nextLabel="댓글 가져오기">
+      onNext={collect} loading={busy} loadingLabel="댓글을 가져오는 중..." nextLabel="댓글 가져오기">
       <div className="vgroup">
         <span className="vlabel">최대 개수</span>
         <div className="vchips">

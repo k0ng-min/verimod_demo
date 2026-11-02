@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import type { Action, SessionItem, SessionView } from '../../shared/types'
 import { svc } from '../api/svc'
@@ -7,7 +8,7 @@ import { CountUp } from '../components/Kinetic'
 import { PagerNav, useFitCount, usePager } from '../components/Pager'
 import { StepFlow } from '../components/StepFlow'
 import { ScoreBars, W4_PROVISIONAL_THRESHOLDS } from '../components/ScoreBars'
-import { ActionBadge, ACTION_LABEL, CopyButton, downloadJson, Modal, Notice, shortHash } from '../components/ui'
+import { ActionBadge, ACTION_LABEL, ArrowIcon, CopyButton, downloadJson, Modal, Notice, shortHash } from '../components/ui'
 import { W4_PROVISIONAL_POLICY_HASH } from '../verify/verifier'
 import type { StepProps } from './AnalyzePage'
 import { errorText, rememberSession } from './stepsCollect'
@@ -38,6 +39,100 @@ const ERROR_TEXT: Record<string, string> = {
   IDEMPOTENCY_CONFLICT: '같은 요청 키에 다른 내용이 와서 거부됨',
   CANCELLED_BY_USER: '사용자가 취소함',
   INVALID_BACKEND_RESPONSE: 'backend 응답 형식 오류',
+}
+
+const ANCHOR_DEMO = [
+  {
+    icon: 'receipt',
+    label: '01 · Receipt 발급',
+    title: '댓글마다 판정 영수증을 만들어요',
+    detail: '실제 R01 추론과 정책 판단은 여기까지 완료됩니다. 새 영수증은 아직 체인에 올라가지 않아 PENDING_ANCHOR 상태예요.',
+  },
+  {
+    icon: 'card-box',
+    label: '02 · F freeze',
+    title: 'F가 미앵커 Receipt를 Epoch로 묶어요',
+    detail: 'authoritative DB에서 Merkle root와 Receipt 수를 고정합니다. 이 단계부터는 운영자 간 확인이 필요한 경계예요.',
+  },
+  {
+    icon: 'key',
+    label: '03 · T 서명 · 전송',
+    title: 'T가 승인된 publisher 지갑으로 거래를 준비해요',
+    detail: 'F의 durable ACK로 root·count·계약 주소가 일치함을 확인한 뒤에만 Base Sepolia 전송이 가능합니다.',
+  },
+  {
+    icon: 'chains',
+    label: '04 · F confirmation',
+    title: 'F가 네트워크에서 최종 확인해요',
+    detail: '거래 이벤트와 Epoch 값, 최소 12 confirmations를 재검증하면 proof와 anchor가 공개되고 CONFIRMED가 됩니다.',
+  },
+] as const
+
+/**
+ * 신규 Receipt의 실제 상태를 바꾸지 않고, 운영자 전용 anchor 절차를 발표용으로 설명한다.
+ * 자동 재생 영상 대신 사용자가 넘길 수 있는 모션 카드로 각 책임 경계를 분명히 보여 준다.
+ */
+/**
+ * PENDING_ANCHOR 이후 절차는 실제 Receipt 상태를 변경하지 않는 발표용 안내다.
+ * 화면을 길게 만들지 않도록 Share 진입 시 alert 카드로 열고, 4초마다 다음 단계로 넘긴다.
+ */
+function AnchoringDemo({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
+  const [index, setIndex] = useState(0)
+  const reduce = useReducedMotion()
+  const item = ANCHOR_DEMO[index]
+  const next = () => setIndex((current) => current < ANCHOR_DEMO.length - 1 ? current + 1 : 0)
+
+  useEffect(() => { if (open) setIndex(0) }, [open])
+
+  useEffect(() => {
+    if (!open || reduce) return
+    const timer = window.setTimeout(() => {
+      if (index === ANCHOR_DEMO.length - 1) onOpenChange(false)
+      else next()
+    }, 4200)
+    return () => window.clearTimeout(timer)
+  }, [index, open, reduce])
+
+  return (
+    <>
+      <AnimatePresence>
+        {open && (
+          <motion.div className="anchor-alert__overlay" role="presentation"
+            initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.section className="anchor-alert" role="dialog" aria-modal="true" aria-labelledby="anchor-alert-title"
+              initial={reduce ? false : { opacity: 0, y: 24, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={reduce ? undefined : { opacity: 0, y: 24, scale: 0.96 }} transition={{ type: 'spring', stiffness: 320, damping: 28 }}>
+              <div className="anchor-alert__head">
+                <div>
+                  <span className="section-label">PENDING_ANCHOR 이후 · 흐름 데모</span>
+                  <h2 id="anchor-alert-title">운영 확인은 이렇게 이어져요</h2>
+                </div>
+                <div className="anchor-alert__head-actions"><span className="anchor-alert__counter">{index + 1} / {ANCHOR_DEMO.length}</span><button type="button" className="anchor-alert__close" onClick={() => onOpenChange(false)} aria-label="안내 닫기">×</button></div>
+              </div>
+              <div className="anchor-alert__rail" aria-label="Epoch anchor 단계">
+                {ANCHOR_DEMO.map((stage, stageIndex) => (
+                  <span key={stage.label} className={`anchor-alert__dot${stageIndex === index ? ' anchor-alert__dot--active' : stageIndex < index ? ' anchor-alert__dot--done' : ''}`}>{stageIndex + 1}</span>
+                ))}
+              </div>
+              <div className="anchor-alert__viewport" aria-live="polite">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div key={item.label} className="anchor-alert__slide"
+                    initial={reduce ? false : { opacity: 0, x: 24, scale: 0.98 }} animate={{ opacity: 1, x: 0, scale: 1 }} exit={reduce ? undefined : { opacity: 0, x: -24, scale: 0.98 }} transition={{ duration: 0.22, ease: 'easeOut' }}>
+                    <div className="anchor-alert__art"><Icon3D src={item.icon} size={70} /></div>
+                    <div className="anchor-alert__copy"><span>{item.label}</span><strong>{item.title}</strong><p>{item.detail}</p></div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+              <div className="anchor-alert__footer">
+                <span className="anchor-alert__timer" aria-label="다음 단계까지 남은 시간"><i key={index} /></span>
+                <button type="button" className="anchor-alert__next" onClick={next} aria-label="다음 안내 단계"><ArrowIcon size={26} /></button>
+              </div>
+              <p className="anchor-alert__notice"><b>흐름 이해를 위한 데모예요.</b> 이 Receipt는 실제로 PENDING_ANCHOR에 머뭅니다. T/F ACK와 네트워크 확인의 실제 구현·검증 근거는 발표 PPT에서 확인할 수 있어요.</p>
+            </motion.section>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
 }
 
 export function RunStep({ flow, go, session, setSession }: StepProps) {
@@ -192,7 +287,7 @@ export function ResultStep({ go, session, flow }: StepProps) {
   )
 }
 
-export function ShareStep({ flow, update, go, session, setSession, restart }: StepProps) {
+export function ShareStep({ flow, update, session, setSession, restart, anchorDemoOpen, setAnchorDemoOpen }: StepProps) {
   const [busy, setBusy] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const c = counts(session)
@@ -222,7 +317,7 @@ export function ShareStep({ flow, update, go, session, setSession, restart }: St
     <StepFlow stepKey="share" icon="receipt" eyebrow="영수증·공유" dense
       title={session.is_demo ? '데모는 영수증이 없어요' : '영수증을 보관하고 공유해요'}
       subtitle={session.is_demo ? '실제 블록체인 검증은 공개 증거 영수증으로 해 볼 수 있어요.' : `영수증 ${c.judged}개는 댓글마다 따로 발급됐고, 아래 링크는 그 목록을 모아 보여 줘요.`}
-      onBack={() => go('result')}>
+      >
       <div className="card vcard-tight">
         <span className="section-label">공개 링크 {session.is_demo && '· 데모'}</span>
         <div className="vlinkrow">
@@ -236,9 +331,12 @@ export function ShareStep({ flow, update, go, session, setSession, restart }: St
           <Link className="link-button" to="/r/evidence-0">2026-10-20 Base Sepolia에 실제 등록된 공개 영수증</Link>으로 브라우저 독립 검증을 해 볼 수 있어요.
         </Notice>
       ) : (
-        <Notice tone="info" icon="hourglass">
-          새 영수증은 <b>PENDING_ANCHOR</b>예요. 운영자가 epoch를 묶어 체인에 등록·확정하기 전에는 블록체인 검증이 <b>대기</b>로 나와요(VALID 아님).
-        </Notice>
+        <>
+          <Notice tone="info" icon="hourglass">
+            새 영수증은 <b>PENDING_ANCHOR</b>예요. 운영자가 epoch를 묶어 체인에 등록·확정하기 전에는 블록체인 검증이 <b>대기</b>로 나와요(VALID 아님).
+          </Notice>
+          <AnchoringDemo open={anchorDemoOpen} onOpenChange={setAnchorDemoOpen} />
+        </>
       )}
       <div className="vactions-grid">
         {!session.is_demo && (

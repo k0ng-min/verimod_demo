@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import type { Capabilities, SessionView } from '../../shared/types'
 import { svc, SvcError } from '../api/svc'
@@ -18,6 +18,8 @@ export interface StepProps {
   caps: Capabilities | null
   capsError: string | null
   restart: () => void
+  anchorDemoOpen: boolean
+  setAnchorDemoOpen: (open: boolean) => void
 }
 
 const TITLES: Record<StepId, string> = {
@@ -40,12 +42,18 @@ export function AnalyzePage() {
   const [caps, setCaps] = useState<Capabilities | null>(null)
   const [capsError, setCapsError] = useState<string | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
+  const [anchorDemoOpen, setAnchorDemoOpen] = useState(false)
+  const previousStep = useRef<StepId | null>(null)
 
   const update = useCallback((patch: Partial<FlowState>) => setFlow((current) => ({ ...current, ...patch })), [])
   const go = useCallback((step: StepId) => setFlow((current) => ({ ...current, step })), [])
   const restart = useCallback(() => { setSession(null); setFlow({ ...INITIAL }) }, [])
 
   useEffect(() => { saveFlow(flow) }, [flow])
+  useEffect(() => {
+    if (flow.step === 'share' && previousStep.current !== 'share') setAnchorDemoOpen(true)
+    previousStep.current = flow.step
+  }, [flow.step])
 
   useEffect(() => {
     svc.capabilities().then(setCaps).catch((error: unknown) => setCapsError(error instanceof SvcError ? error.message : '서비스 상태를 확인하지 못했습니다'))
@@ -83,13 +91,23 @@ export function AnalyzePage() {
     })
   }, [resumeId, session, flow.sessionId, flow.owner, flow.step])
 
-  const props: StepProps = { flow, update, go, session, setSession, caps, capsError, restart }
+  const props: StepProps = { flow, update, go, session, setSession, caps, capsError, restart, anchorDemoOpen, setAnchorDemoOpen }
   const index = STEPS.indexOf(flow.step)
   const needsSession = index >= STEPS.indexOf('words')
+  const goPrevious = () => {
+    const previous: Partial<Record<StepId, StepId>> = {
+      source: 'link', scope: 'source',
+      words: flow.kind === 'MANUAL' ? 'link' : 'scope', pick: 'words', settings: 'pick', run: 'settings', result: 'run', share: 'result',
+    }
+    const step = previous[flow.step]
+    if (step) go(step)
+    else navigate('/')
+  }
 
   return (
     <div className="page vpage">
-      <TopBar title={TITLES[flow.step]} step={`${index + 1}/${STEPS.length}`} onHome={() => navigate('/')} />
+      {/* 분석 화면에는 FINANCECHALLENGE 톤의 상단 고정 뒤로가기 하나만 둔다. */}
+      <TopBar title={TITLES[flow.step]} step={`${index + 1}/${STEPS.length}`} onHome={goPrevious} onHelp={flow.step === 'share' && !session?.is_demo ? () => setAnchorDemoOpen(true) : undefined} />
       {loadError ? (
         <div className="vcenter"><p className="error-box">{loadError}</p><button type="button" className="btn-secondary" onClick={() => { setLoadError(null); restart() }}>새로 시작</button></div>
       ) : needsSession && !session ? (

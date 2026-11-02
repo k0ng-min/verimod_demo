@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useState, type RefObject } from 'react'
+import { ArrowIcon } from './ui'
 
 /** 레퍼런스 Pager와 같은 동작: 목록이 길면 스크롤 대신 "다음"으로 넘긴다. 목록이 바뀌면 1쪽으로. */
 export function usePager<T>(items: readonly T[], pageSize: number, resetKey?: unknown) {
@@ -38,9 +39,9 @@ export function PagerNav({ page, totalPages, onChange, label = '쪽' }: { page: 
   if (totalPages <= 1) return null
   return (
     <div className="pager-nav">
-      <button type="button" className="pager-navbtn" onClick={() => onChange(Math.max(0, page - 1))} disabled={page === 0}>← 이전</button>
+      <button type="button" className="pager-navbtn" onClick={() => onChange(Math.max(0, page - 1))} disabled={page === 0}><ArrowIcon direction="left" size={16} /> 이전</button>
       <span className="pager-count" aria-live="polite">{page + 1} / {totalPages} {label}</span>
-      <button type="button" className="pager-navbtn" onClick={() => onChange(Math.min(totalPages - 1, page + 1))} disabled={page === totalPages - 1}>다음 →</button>
+      <button type="button" className="pager-navbtn" onClick={() => onChange(Math.min(totalPages - 1, page + 1))} disabled={page === totalPages - 1}>다음 <ArrowIcon size={16} /></button>
     </div>
   )
 }
