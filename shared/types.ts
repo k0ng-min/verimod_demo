@@ -4,7 +4,8 @@
 export type Platform = 'YOUTUBE' | 'NEWS' | 'MANUAL' | 'DEMO'
 
 export type SortOrder = 'time' | 'relevance'
-export const MAX_CHOICES = [20, 50, 100] as const
+/** 최상위 댓글 기준 수집 상한. 답글은 이 숫자에 포함하지 않는다. */
+export const MAX_CHOICES = [20, 50, 100, 200, 500] as const
 export type MaxComments = (typeof MAX_CHOICES)[number]
 
 export interface ProviderCapabilities {

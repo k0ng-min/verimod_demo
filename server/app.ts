@@ -27,7 +27,7 @@ const NEWS_REASON = '뉴스 댓글은 공개된 공식 수집 API가 없어 지�
 function collectOptions(value: unknown): CollectOptions {
   const record = (typeof value === 'object' && value !== null ? value : {}) as Record<string, unknown>
   const max = Number(record.max)
-  if (!MAX_CHOICES.includes(max as MaxComments)) throw new ServiceError('INVALID_INPUT', 400, '최대 개수는 20·50·100 중 하나입니다')
+  if (!MAX_CHOICES.includes(max as MaxComments)) throw new ServiceError('INVALID_INPUT', 400, '최대 개수는 20·50·100·200·500 중 하나입니다')
   if (record.order !== 'time' && record.order !== 'relevance') throw new ServiceError('INVALID_INPUT', 400, '정렬은 최신순 또는 인기순입니다')
   if (typeof record.includeReplies !== 'boolean') throw new ServiceError('INVALID_INPUT', 400, '답글 포함 여부가 필요합니다')
   return { max: max as MaxComments, order: record.order, includeReplies: record.includeReplies }

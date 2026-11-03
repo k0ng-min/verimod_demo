@@ -196,6 +196,7 @@
 .vrow__meta { font-size: 0.72rem; color: var(--muted); display: flex; gap: 6px; align-items: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .vrow--vault { align-items: center; cursor: default; height: 56px; }
 .vrow__open { background: none; border: 0; padding: 0; cursor: pointer; }
+.vrow--reply { margin-left: clamp(18px, 4cqw, 34px); width: calc(100% - clamp(18px, 4cqw, 34px)); border-left: 3px solid var(--primary-soft); background: color-mix(in srgb, var(--card-bg) 82%, var(--primary-soft)); }
 .pager-nav { margin-top: 0; }
 
 /* 결과 */
@@ -288,6 +289,29 @@
 .anchor-alert__notice { margin: 0; padding: 10px 18px 14px; border-top: 1px solid var(--border); color: #765315; background: var(--yellow-soft); font-size: .7rem; line-height: 1.45; }
 :root[data-theme="dark"] .anchor-alert__notice { color: #f5cf86; background: rgba(245,187,85,.16); }
 @keyframes anchor-alert-timer { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* 링크 입력 화면의 전체 흐름 소개. 영수증 단계 안내와 같은 alert 비율·자동 재생 규칙을 쓴다. */
+.intro-alert__overlay { position: fixed; inset: 0; z-index: 320; display: grid; place-items: center; padding: 20px; background: rgba(18,24,38,.48); }
+.intro-alert { width: min(100%, 410px); overflow: hidden; border: 1px solid rgba(255,255,255,.72); border-radius: var(--radius-lg); background: var(--card-bg); box-shadow: 0 24px 60px rgba(0,0,0,.30); }
+.intro-alert__head { display: flex; justify-content: space-between; gap: 10px; padding: 18px 18px 12px; }
+.intro-alert__head h2 { margin: 3px 0 0; color: var(--heading); font: 800 1.08rem/1.3 var(--font-display); }
+.intro-alert__head-actions { display: flex; align-items: flex-start; gap: 7px; }
+.intro-alert__rail { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; padding: 0 18px 13px; }
+.intro-alert__dot { height: 5px; border-radius: 999px; background: var(--cream-deep); transition: background .22s, transform .22s; }
+.intro-alert__dot--done { background: var(--mint); }
+.intro-alert__dot--active { background: var(--primary); transform: scaleY(1.5); }
+.intro-alert__body { min-height: 154px; display: grid; grid-template-columns: 84px minmax(0,1fr); align-items: center; gap: 14px; margin: 0 18px; padding: 14px; border: 1px solid var(--border); border-radius: var(--radius-md); background: linear-gradient(145deg,var(--card-bg),var(--primary-soft)); }
+.intro-alert__art { height: 84px; display: grid; place-items: center; border-radius: 17px; background: var(--cream); }
+.intro-alert__body > div:last-child { display: grid; gap: 4px; }
+.intro-alert__body span { color: var(--primary-dark); font-size: .67rem; font-weight: 850; letter-spacing: .04em; }
+.intro-alert__body strong { color: var(--heading); font-size: .97rem; line-height: 1.32; }
+.intro-alert__body p { margin: 0; color: var(--text); font-size: .75rem; line-height: 1.5; }
+.intro-alert__footer { display: flex; align-items: center; gap: 12px; padding: 13px 18px 16px; }
+.intro-alert__footer i { flex: 1; height: 7px; overflow: hidden; border-radius: 999px; background: var(--cream-deep); }
+.intro-alert__footer i::after { content: ''; display: block; width: 100%; height: 100%; background: linear-gradient(90deg,var(--primary),var(--primary-dark)); transform-origin:left; animation: anchor-alert-timer 4.2s linear forwards; }
+.intro-alert__footer button { width: 46px; height: 40px; border: 0; border-radius: 15px; background: var(--primary); color: #fff; box-shadow: 0 5px 13px rgba(75,132,236,.32); font-size: 1.7rem; font-weight: 950; line-height: .7; cursor: pointer; }
+.intro-alert__footer .arrow-icon { stroke-width: 3.2px; }
+.home__topbar { gap: 12px; }
 
 @media (max-width: 430px) {
   .anchor-alert__overlay { padding: 14px; }

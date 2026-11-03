@@ -10,7 +10,9 @@ import { tx } from './db'
 import { ServiceError } from './errors'
 import { demoJudge } from './providers/demo'
 
-export const MAX_SELECTED = 100
+/** 원댓글 수집 설정의 두 배(답글 포함)까지 허용하되, 한 세션의 절대 상한은 1,000개다. */
+export const MAX_SELECTED = 1_000
+export const SELECTED_PER_TOP_LEVEL = 2
 
 const sha256 = (value: string) => createHash('sha256').update(value).digest('hex')
 
@@ -129,10 +131,12 @@ export class SessionStore {
       semanticIds = new Set(semantic.ids)
     }
     const comments = this.comments(sessionId)
+    const options = JSON.parse(row.options_json) as CollectOptions
+    const selectionLimit = Math.min(MAX_SELECTED, options.max * SELECTED_PER_TOP_LEVEL)
     const matched = new Set(applyFilter(comments, spec, semanticIds).map((comment) => comment.id))
     const unique = [...new Set(commentIds)]
     if (unique.length === 0) throw new ServiceError('EMPTY_SELECTION', 400, '판정할 댓글을 하나 이상 고르세요')
-    if (unique.length > MAX_SELECTED) throw new ServiceError('INVALID_INPUT', 400, `한 세션에 ${MAX_SELECTED}개까지 판정합니다`)
+    if (unique.length > selectionLimit) throw new ServiceError('INVALID_INPUT', 400, `이 수집 범위에서는 한 세션에 ${selectionLimit}개까지 판정합니다(원댓글 ${options.max}개 + 답글 포함)`)
     if (unique.some((id) => !matched.has(id))) throw new ServiceError('SELECTION_MISMATCH', 409, '조건에 맞지 않는 댓글이 선택에 섞여 있습니다. 화면을 새로 고쳐 다시 고르세요')
     const order = new Map(comments.map((comment, index) => [comment.id, index]))
     const at = this.now().toISOString()

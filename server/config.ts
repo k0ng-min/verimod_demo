@@ -9,6 +9,8 @@ export interface ServiceConfig {
   youtubeApiKey: string | null
   geminiApiKey: string | null
   geminiModel: string
+  /** 의미 선택은 수십 개 원문을 함께 보내므로 일반 외부 API보다 긴 제한을 쓴다. */
+  geminiTimeoutMs: number
   upstreamTimeoutMs: number
   /** 연속 INFERENCE_UNAVAILABLE이 이만큼 나오면 나머지 발급 시도를 멈춘다. */
   stopAfterUnavailable: number
@@ -36,6 +38,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): ServiceConfig 
     youtubeApiKey: nonEmpty(env.YOUTUBE_API_KEY),
     geminiApiKey: nonEmpty(env.GEMINI_API_KEY),
     geminiModel: nonEmpty(env.GEMINI_MODEL) ?? 'gemini-2.5-flash',
+    geminiTimeoutMs: Number(env.GEMINI_TIMEOUT_MS ?? 60_000),
     upstreamTimeoutMs: Number(env.REDESIGN_UPSTREAM_TIMEOUT_MS ?? 8_000),
     stopAfterUnavailable: Number(env.REDESIGN_STOP_AFTER_UNAVAILABLE ?? 3),
   }

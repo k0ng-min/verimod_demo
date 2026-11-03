@@ -11,7 +11,7 @@ const { app } = createServiceApp({
   db,
   config,
   youtube: createYouTubeProvider({ apiKey: config.youtubeApiKey, timeoutMs: config.upstreamTimeoutMs }),
-  semantic: createGeminiSemanticFilter({ apiKey: config.geminiApiKey, model: config.geminiModel, timeoutMs: 20_000 }),
+  semantic: createGeminiSemanticFilter({ apiKey: config.geminiApiKey, model: config.geminiModel, timeoutMs: config.geminiTimeoutMs }),
   backend: createBackendClient({ baseUrl: config.backendUrl, timeoutMs: config.backendTimeoutMs }),
 })
 

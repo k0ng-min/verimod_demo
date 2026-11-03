@@ -130,7 +130,7 @@ export function ScopeStep({ flow, update, caps, setSession }: StepProps) {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const provider = caps?.providers[flow.kind === 'DEMO' ? 'DEMO' : 'YOUTUBE']
-  const maxChoices: MaxComments[] = provider?.maxChoices.length ? provider.maxChoices : [20, 50, 100]
+  const maxChoices: MaxComments[] = provider?.maxChoices.length ? provider.maxChoices : [20, 50, 100, 200, 500]
   const orders: SortOrder[] = provider?.orders.length ? provider.orders : ['relevance', 'time']
   const total = flow.kind === 'DEMO' ? 24 : flow.source?.platform_comment_count ?? null
 
@@ -153,10 +153,10 @@ export function ScopeStep({ flow, update, caps, setSession }: StepProps) {
 
   return (
     <StepFlow stepKey="scope" icon="target" eyebrow="수집 범위" title="댓글을 얼마나 가져올까요?"
-      subtitle={total !== null ? `플랫폼 전체 ${total.toLocaleString('ko-KR')}개 중 최대 ${flow.options.max}개만 가져와요. 전부 모으는 것이 아니에요.` : `최대 ${flow.options.max}개까지만 가져와요.`}
+      subtitle={total !== null ? `플랫폼 전체 ${total.toLocaleString('ko-KR')}개 중 원댓글 최대 ${flow.options.max}개를 가져와요. 답글은 별도예요.` : `원댓글 최대 ${flow.options.max}개를 가져와요. 답글은 별도예요.`}
       onNext={collect} loading={busy} loadingLabel="댓글을 가져오는 중..." nextLabel="댓글 가져오기">
       <div className="vgroup">
-        <span className="vlabel">최대 개수</span>
+        <span className="vlabel">원댓글 최대 개수</span>
         <div className="vchips">
           {maxChoices.map((max) => <Chip key={max} on={flow.options.max === max} onClick={() => update({ options: { ...flow.options, max } })}>{max}개</Chip>)}
         </div>
@@ -168,7 +168,7 @@ export function ScopeStep({ flow, update, caps, setSession }: StepProps) {
         </div>
       </div>
       <Toggle checked={flow.options.includeReplies} disabled={provider?.replies === 'NONE'} onChange={(includeReplies) => update({ options: { ...flow.options, includeReplies } })}
-        label="답글도 가져오기" hint="답글은 부모 댓글과 연결해 보여 줘요. 개수 상한 안에서만 가져와요." />
+        label="답글도 가져오기" hint="답글은 원댓글 개수에 포함하지 않고, 원댓글 아래에서 함께 판정·영수증 발급해요." />
       {error && <p className="error-box" role="alert">{error}</p>}
     </StepFlow>
   )

@@ -9,7 +9,8 @@ import { dedupe, type CollectResult, type CommentProvider } from './types'
 const API = 'https://www.googleapis.com/youtube/v3/'
 const HOSTS = ['www.googleapis.com'] as const
 const MAX_THREAD_PAGES = 5
-const MAX_REPLY_CALLS = 10
+/** 500개 원댓글 수집에서도 답글 API 호출 폭주를 막는 운영 상한. */
+const MAX_REPLY_CALLS = 100
 
 export interface YouTubeRef { videoId: string; canonicalUrl: string }
 
@@ -74,7 +75,7 @@ export function createYouTubeProvider(options: { apiKey: string | null; timeoutM
         reason: options.apiKey ? null : '서버에 YOUTUBE_API_KEY가 없어 YouTube 댓글을 가져올 수 없습니다',
         orders: ['time', 'relevance'],
         replies: 'FULL',
-        maxChoices: [20, 50, 100],
+        maxChoices: [20, 50, 100, 200, 500],
       }
     },
 
@@ -103,6 +104,7 @@ export function createYouTubeProvider(options: { apiKey: string | null; timeoutM
       const sourceUrl = source.source_url ?? ref.canonicalUrl
       const notices: CollectNotice[] = []
       const comments: NormalizedComment[] = []
+      let topLevelCount = 0
       const partialThreads: Array<{ parentId: string; have: number; total: number }> = []
       let pageToken: string | null = null
       let pages = 0
@@ -110,7 +112,7 @@ export function createYouTubeProvider(options: { apiKey: string | null; timeoutM
         const params: Record<string, string> = {
           part: collect.includeReplies ? 'snippet,replies' : 'snippet',
           videoId: ref.videoId,
-          maxResults: String(Math.min(100, collect.max)),
+          maxResults: '100',
           order: collect.order,
           textFormat: 'plainText',
         }
@@ -129,16 +131,16 @@ export function createYouTubeProvider(options: { apiKey: string | null; timeoutM
         }
         pages += 1
         for (const thread of Array.isArray(body.items) ? body.items : []) {
-          if (comments.length >= collect.max) break
+          if (topLevelCount >= collect.max) break
           const snippet = obj(obj(thread).snippet)
           const top = normalizeYouTubeComment(snippet.topLevelComment, sourceUrl, collectedAt, null)
           if (!top) continue
           comments.push(top)
+          topLevelCount += 1
           if (!collect.includeReplies) continue
           const replies = Array.isArray(obj(obj(thread).replies).comments) ? obj(obj(thread).replies).comments as unknown[] : []
           let have = 0
           for (const reply of replies) {
-            if (comments.length >= collect.max) break
             const normalized = normalizeYouTubeComment(reply, sourceUrl, collectedAt, top.id)
             if (normalized) { comments.push(normalized); have += 1 }
           }
@@ -146,20 +148,19 @@ export function createYouTubeProvider(options: { apiKey: string | null; timeoutM
           if (total > have) partialThreads.push({ parentId: top.id, have, total })
         }
         pageToken = str(body.nextPageToken)
-      } while (pageToken && comments.length < collect.max && pages < MAX_THREAD_PAGES)
-      if (pageToken && comments.length < collect.max) notices.push({ code: 'PAGE_LIMIT', detail: `요청 페이지 상한(${MAX_THREAD_PAGES}쪽)에서 멈췄습니다` })
+      } while (pageToken && topLevelCount < collect.max && pages < MAX_THREAD_PAGES)
+      if (pageToken && topLevelCount < collect.max) notices.push({ code: 'PAGE_LIMIT', detail: `원댓글 요청 페이지 상한(${MAX_THREAD_PAGES}쪽)에서 멈췄습니다` })
 
       // commentThreads는 답글을 일부만 준다. 남은 개수 안에서 comments.list로 더 가져온다.
       let replyCalls = 0
       let missingReplies = 0
       for (const thread of partialThreads) {
-        if (comments.length >= collect.max || replyCalls >= MAX_REPLY_CALLS) { missingReplies += thread.total - thread.have; continue }
+        if (replyCalls >= MAX_REPLY_CALLS) { missingReplies += thread.total - thread.have; continue }
         replyCalls += 1
         try {
           const body = await call('comments', { part: 'snippet', parentId: thread.parentId, maxResults: '100', textFormat: 'plainText' })
           let have = thread.have
           for (const reply of Array.isArray(body.items) ? body.items : []) {
-            if (comments.length >= collect.max) break
             const normalized = normalizeYouTubeComment(reply, sourceUrl, collectedAt, thread.parentId)
             if (normalized && !comments.some((comment) => comment.id === normalized.id)) { comments.push(normalized); have += 1 }
           }
@@ -173,7 +174,8 @@ export function createYouTubeProvider(options: { apiKey: string | null; timeoutM
       const unique = dedupe(comments)
       if (unique.removed > 0) notices.push({ code: 'DUPLICATES_REMOVED', detail: `중복된 댓글 ${unique.removed}개를 한 번만 남겼습니다` })
       if (unique.comments.length === 0) throw new ProviderError('NO_COMMENTS', '가져올 수 있는 댓글이 없습니다')
-      if (unique.comments.length < collect.max) notices.push({ code: 'FEWER_THAN_REQUESTED', detail: `요청한 ${collect.max}개보다 적은 ${unique.comments.length}개를 가져왔습니다` })
+      const actualTopLevel = unique.comments.filter((comment) => comment.parent_id === null).length
+      if (actualTopLevel < collect.max) notices.push({ code: 'FEWER_THAN_REQUESTED', detail: `요청한 원댓글 ${collect.max}개보다 적은 ${actualTopLevel}개를 가져왔습니다(답글은 별도)` })
       return { comments: unique.comments, notices }
     },
   }

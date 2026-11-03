@@ -106,7 +106,7 @@ export function WordsStep(props: StepProps) {
             <input id="semantic-topic" className="vinput" value={topic} maxLength={80} placeholder="예: 주차 문제" onChange={(event) => setTopic(event.target.value)} />
             <button type="button" className="btn-secondary vinline__btn" onClick={findSemantic} disabled={!topic.trim() || busy}>{busy ? '찾는 중' : 'AI로 찾기'}</button>
           </div>
-          <p className="vhint">Gemini가 주제와 관련된 댓글 id만 고르고, 판정은 하지 않아요.</p>
+          <p className="vhint">Gemini가 주제와 관련된 댓글 id만 고르고, 판정은 하지 않아요. 댓글이 많을 때는 최대 60초까지 기다릴 수 있어요.</p>
         </div>
       ) : (
         <KeywordInput id="kw" label="찾을 단어" placeholder="예: 짜증, 공사" values={flow.filter.keywords} onChange={(keywords) => setFilter({ keywords })} />
@@ -138,10 +138,24 @@ function commentMeta(comment: NormalizedComment, byId: Map<string, NormalizedCom
 export function PickStep(props: StepProps) {
   const { flow, update, go, session, setSession } = props
   const matched = useMatched(props)
+  // API 페이지 경계를 넘어 늦게 받아온 답글도 원댓글 바로 아래에 놓는다.
+  const orderedMatched = useMemo(() => {
+    const all = session?.comments ?? []
+    const wanted = new Set(matched.map((comment) => comment.id))
+    const children = new Map<string, NormalizedComment[]>()
+    for (const comment of all) if (comment.parent_id) children.set(comment.parent_id, [...(children.get(comment.parent_id) ?? []), comment])
+    const ordered: NormalizedComment[] = []
+    const visit = (comment: NormalizedComment) => {
+      if (wanted.has(comment.id)) ordered.push(comment)
+      for (const child of children.get(comment.id) ?? []) visit(child)
+    }
+    for (const comment of all) if (!comment.parent_id) visit(comment)
+    return ordered
+  }, [matched, session])
   const listRef = useRef<HTMLDivElement>(null)
   const pageSize = useFitCount(listRef, 66, 2, 7)
   const excluded = useMemo(() => new Set(flow.excluded), [flow.excluded])
-  const { page, setPage, totalPages, pageItems } = usePager(matched, pageSize, flow.filter)
+  const { page, setPage, totalPages, pageItems } = usePager(orderedMatched, pageSize, flow.filter)
   const byId = useMemo(() => new Map((session?.comments ?? []).map((comment) => [comment.id, comment])), [session])
   const duplicates = useMemo(() => {
     const count = new Map<string, number>()
@@ -149,6 +163,8 @@ export function PickStep(props: StepProps) {
     return count
   }, [matched])
   const selected = matched.filter((comment) => !excluded.has(comment.id))
+  const selectionLimit = Math.min(1000, (session?.options.max ?? 50) * 2)
+  const overSelectionLimit = selected.length > selectionLimit
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -171,7 +187,7 @@ export function PickStep(props: StepProps) {
   return (
     <StepFlow stepKey="pick" icon="tick" eyebrow="댓글 선택" title="판정할 댓글을 골라요" dense
       subtitle={`조건에 맞은 ${matched.length}개 중 빼고 싶은 댓글의 체크를 풀어요.`}
-      onNext={confirm} loading={busy} nextDisabled={selected.length === 0} nextLabel={`${selected.length}개로 계속`}>
+      onNext={confirm} loading={busy} nextDisabled={selected.length === 0 || overSelectionLimit} nextLabel={`${selected.length}개로 계속`}>
       <div className="vtoolbar">
         <span className="vtoolbar__count"><b>{selected.length}</b> 선택 / {matched.length} 일치</span>
         <button type="button" className="pager-navbtn" onClick={() => update({ excluded: [] })} disabled={excluded.size === 0}>전체 선택</button>
@@ -179,7 +195,7 @@ export function PickStep(props: StepProps) {
       </div>
       <div className="vlist" ref={listRef}>
         {pageItems.map((comment) => (
-          <label key={comment.id} className={`vrow${excluded.has(comment.id) ? ' vrow--off' : ''}`}>
+          <label key={comment.id} className={`vrow${comment.parent_id ? ' vrow--reply' : ''}${excluded.has(comment.id) ? ' vrow--off' : ''}`}>
             <input type="checkbox" checked={!excluded.has(comment.id)} onChange={() => toggle(comment.id)} />
             <span className="vrow__body">
               <span className="vrow__text">{comment.text}</span>
@@ -193,6 +209,7 @@ export function PickStep(props: StepProps) {
         ))}
       </div>
       <PagerNav page={page} totalPages={totalPages} onChange={setPage} />
+      {overSelectionLimit && <Notice tone="warn" icon="warning">이번 수집 범위에서는 원댓글 {session?.options.max}개와 답글을 합쳐 최대 {selectionLimit}개까지 판정할 수 있어요. 체크를 {selected.length - selectionLimit}개 해제해 주세요.</Notice>}
       {error && <p className="error-box" role="alert">{error}</p>}
     </StepFlow>
   )

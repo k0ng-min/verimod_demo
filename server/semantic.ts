@@ -1,5 +1,5 @@
 import type { NormalizedComment } from '../shared/types'
-import { ServiceError } from './errors'
+import { ProviderError, ServiceError } from './errors'
 import { fetchJson } from './providers/http'
 
 /** Gemini 의미 관련도 필터. 판정(허용/검토/제한)은 하지 않고 "주제와 관련된 댓글 id"만 고른다.
@@ -8,6 +8,10 @@ import { fetchJson } from './providers/http'
 const HOSTS = ['generativelanguage.googleapis.com'] as const
 export const SEMANTIC_MAX_COMMENTS = 100
 export const SEMANTIC_MAX_QUERY = 80
+/** 한 요청에 너무 많은 원문을 넣으면 Gemini 503이 늘어나므로 작은 묶음으로 처리한다. */
+export const SEMANTIC_BATCH_SIZE = 25
+const SEMANTIC_RETRIES = 2
+const wait = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms))
 
 export interface SemanticFilter {
   available(): { ok: boolean; reason: string | null }
@@ -72,29 +76,35 @@ export function createGeminiSemanticFilter(options: { apiKey: string | null; mod
     },
     async relatedIds(query, comments) {
       if (!options.apiKey) throw new ServiceError('SEMANTIC_UNAVAILABLE', 503, 'GEMINI_API_KEY가 설정되지 않았습니다')
+      if (cached && !cached.result.ok) throw new ServiceError('SEMANTIC_UNAVAILABLE', 503, cached.result.reason ?? 'Gemini API를 사용할 수 없습니다')
       const topic = query.trim()
       if (!topic || [...topic].length > SEMANTIC_MAX_QUERY) throw new ServiceError('INVALID_INPUT', 400, `주제는 1~${SEMANTIC_MAX_QUERY}자로 입력하세요`)
       const scoped = comments.slice(0, SEMANTIC_MAX_COMMENTS)
       const url = new URL(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(options.model)}:generateContent`)
-      const { status, body } = await fetchJson(url, {
-        method: 'POST',
-        timeoutMs: options.timeoutMs,
-        allowedHosts: HOSTS,
-        fetcher: options.fetcher,
-        headers: { 'Content-Type': 'application/json', 'x-goog-api-key': options.apiKey },
-        body: JSON.stringify({
-          contents: [{ role: 'user', parts: [{ text: buildSemanticPrompt(topic, scoped) }] }],
-          generationConfig: {
-            temperature: 0,
-            responseMimeType: 'application/json',
-            responseSchema: { type: 'OBJECT', properties: { related_ids: { type: 'ARRAY', items: { type: 'STRING' } } }, required: ['related_ids'] },
-          },
-        }),
-      })
-      if (status === 400 || status === 401 || status === 403) throw new ServiceError('SEMANTIC_UNAVAILABLE', 503, 'GEMINI_API_KEY가 Gemini API에서 인증되지 않았습니다')
-      if (status === 429) throw new ServiceError('SEMANTIC_RATE_LIMITED', 429, 'Gemini 요청 한도에 걸렸습니다. 잠시 후 다시 시도하세요', true)
-      if (status !== 200) throw new ServiceError('SEMANTIC_UPSTREAM_FAILED', 502, `Gemini 오류(HTTP ${status})`, true)
-      return parseSemanticResponse(body, new Set(scoped.map((comment) => comment.id)))
+      const selected: string[] = []
+      for (let offset = 0; offset < scoped.length; offset += SEMANTIC_BATCH_SIZE) {
+        const batch = scoped.slice(offset, offset + SEMANTIC_BATCH_SIZE)
+        let response: { status: number; body: unknown } | null = null
+        for (let attempt = 0; attempt <= SEMANTIC_RETRIES; attempt += 1) {
+          try {
+            const current = await fetchJson(url, {
+              method: 'POST', timeoutMs: options.timeoutMs, allowedHosts: HOSTS, fetcher: options.fetcher,
+              headers: { 'Content-Type': 'application/json', 'x-goog-api-key': options.apiKey },
+              body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: buildSemanticPrompt(topic, batch) }] }], generationConfig: { temperature: 0, responseMimeType: 'application/json', responseSchema: { type: 'OBJECT', properties: { related_ids: { type: 'ARRAY', items: { type: 'STRING' } } }, required: ['related_ids'] } } }),
+            })
+            if (current.status !== 503 || attempt === SEMANTIC_RETRIES) { response = current; break }
+          } catch (error) {
+            if (!(error instanceof ProviderError) || error.code !== 'TIMEOUT' || attempt === SEMANTIC_RETRIES) throw error
+          }
+          await wait(700 * (attempt + 1))
+        }
+        if (!response) throw new ServiceError('SEMANTIC_UPSTREAM_FAILED', 502, 'Gemini가 일시적으로 응답하지 않습니다. 잠시 후 다시 시도하세요', true)
+        if (response.status === 400 || response.status === 401 || response.status === 403) throw new ServiceError('SEMANTIC_UNAVAILABLE', 503, 'GEMINI_API_KEY가 Gemini API에서 인증되지 않았습니다')
+        if (response.status === 429) throw new ServiceError('SEMANTIC_RATE_LIMITED', 429, 'Gemini 요청 한도에 걸렸습니다. 잠시 후 다시 시도하세요', true)
+        if (response.status !== 200) throw new ServiceError('SEMANTIC_UPSTREAM_FAILED', 502, `Gemini 오류(HTTP ${response.status}). 잠시 후 다시 시도하세요`, true)
+        selected.push(...parseSemanticResponse(response.body, new Set(batch.map((comment) => comment.id))))
+      }
+      return [...new Set(selected)]
     },
   }
 }
